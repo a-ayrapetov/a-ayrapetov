@@ -1,16 +1,20 @@
-## Hi there 👋
+# Arkadiy Ayrapetov
 
-<!--
-**a-ayrapetov/a-ayrapetov** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Cyber Security Architect. 13+ years in enterprise and OT network security: Cisco ISE, TrustSec, SD-Access, Catalyst Center, 802.1X, RADIUS and TACACS+, segmentation for industrial and life-science environments. CCNP Enterprise.
 
-Here are some ideas to get you started:
+## What is here
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Client-neutral tools that I use in real engagements, rewritten so anyone can run them:
+
+- Read-only by default. Show commands and GET calls unless the README says otherwise.
+- Credentials prompted at runtime, never stored.
+- Sample data uses RFC 5737 documentation addresses only.
+- Every repo ships with tests and a CI gate that rejects secrets and private addresses.
+
+## Focus areas
+
+- Identity and access: ISE policy export, NAC readiness, new-endpoint watch, TrustSec health.
+- Fabric and campus: Catalyst Center inventory, port triage, drift detection.
+- Operations: port health, evidence collection, Netmiko show-command runners.
+
+Repositories are added as each tool passes review.
