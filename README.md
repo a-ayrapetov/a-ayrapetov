@@ -1,6 +1,6 @@
 # Arkadiy Ayrapetov
 
-**Cyber Security Architect.** 13+ years in enterprise and OT network security: Cisco ISE, TrustSec, SD-Access, Catalyst Center, 802.1X, RADIUS and TACACS+, and segmentation for industrial and life-science environments. CCNP Enterprise.
+**Cyber Security Architect.** 13+ years in enterprise and OT network security: Cisco ISE, TrustSec, SD-Access, Catalyst Center, 802.1X, RADIUS and TACACS+, and segmentation for OT and regulated environments. CCNP Enterprise.
 
 These are the tools I actually reach for on engagements, rewritten client-neutral so anyone can run them.
 
