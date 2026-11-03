@@ -19,13 +19,11 @@ Client-neutral tools that I use in real engagements, rewritten so anyone can run
 
 ## Tools
 
-- [a-ayrapetov](https://github.com/a-ayrapetov/a-ayrapetov): Profile
 - [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift): Read-only configuration drift detection for Cisco IOS and IOS-XE (Netmiko)
 - [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health): Offline triage of Cisco show interfaces output: CRC, duplex mismatch, err-disabled, drops, flapping
 - [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit): Offline security hardening audit of Cisco IOS / IOS-XE running-configs
 - [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain): Explain why an endpoint got its Cisco ISE result: session, auth history, authz, SGT, failure causes
 - [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit): Read-only Cisco ISE health and certificate-expiry audit via the ISE OpenAPI
-- [vesta-ai-copy](https://github.com/a-ayrapetov/vesta-ai-copy): The copy of vesta ai for beta test
 - [win-security-posture-audit](https://github.com/a-ayrapetov/win-security-posture-audit): Read-only PowerShell audit of a Windows machine's security and health posture
 
 More are added as each tool passes review.
