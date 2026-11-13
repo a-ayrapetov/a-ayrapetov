@@ -30,7 +30,8 @@ jobs:
               const r = await fetch(`https://api.cloudflare.com/client/v4/accounts/${process.env.CF_ACCOUNT_ID}/ai/run/@cf/openai/gpt-oss-120b`, {
                 method: 'POST', headers: { Authorization: `Bearer ${process.env.CF_AI_TOKEN}`, 'Content-Type': 'application/json' },
                 body: JSON.stringify({ messages: [{ role: 'system', content: system }, { role: 'user', content: user }], max_tokens: 8192 }) });
-              const j = await r.json(); if (!j.success) throw new Error(`Workers AI: ${JSON.stringify(j.errors)}`);
+              let j; try { j = await r.json(); } catch { throw new Error(`Workers AI: HTTP ${r.status}, the reply was not JSON`); }
+              if (!j.success) throw new Error(`Workers AI: HTTP ${r.status} ${JSON.stringify(j.errors)}`);
               const t = text(j.result ?? {}).trim();
               if (!t) throw new Error(`Workers AI returned no text. Result keys: ${Object.keys(j.result ?? {}).join(',')}; usage: ${JSON.stringify(j.result?.usage ?? null)}`);
               return t;
