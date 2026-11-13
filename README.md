@@ -63,6 +63,16 @@ Day one is a hardening audit and a drift baseline. ISE health runs before anythi
 | ios-hardening-audit | [![ci](https://github.com/a-ayrapetov/ios-hardening-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/ios-hardening-audit/actions) | Python |
 | win-security-posture-audit | [![ci](https://github.com/a-ayrapetov/win-security-posture-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/win-security-posture-audit/actions) | PowerShell |
 
+## How I work: playbooks
+
+Method notes from the same engagements, with no customer in them.
+
+| Playbook | When to read it |
+|---|---|
+| [AI assistant, human at the keyboard](playbooks/ai-assisted-network-operations.md) | You want an AI assistant on production network work without it guessing or touching a device |
+| [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) | You are closing access ports for devices that cannot do 802.1X |
+| [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) | Your flow analytics platform alarms all day and nobody looks any more |
+
 ## Rules every tool follows
 
 **Read-only by default.** Show commands and GET calls. Nothing is pushed to a device unless the README says so in its first line.
