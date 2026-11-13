@@ -37,6 +37,39 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 
 Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Meraki, Nexus, Secure Firewall, Secure Network Analytics, Gigamon, Nozomi, Darktrace, Python with Netmiko, PowerShell.
 
+## Where I work: IT to OT, level by level
+
+The Purdue model from the enterprise down to the field, and what I do at each level. [Clickable version](https://a-ayrapetov.github.io/purdue.html).
+
+```mermaid
+%%{init: {"flowchart": {"rankSpacing": 30, "nodeSpacing": 20}}}%%
+flowchart LR
+  L4["<b>Levels 4 and 5: Enterprise IT</b><br/>ISE identity and Zero Trust<br/>SD-Access, Catalyst Center<br/>firewalls, cloud links"]
+  L35["<b>Level 3.5: OT DMZ</b><br/>jump hosts, patch relay<br/>historian replica<br/>remote access with MFA"]
+  L3["<b>Level 3: Operations</b><br/>control center servers<br/>TrustSec security groups<br/>NDR sensors"]
+  L2["<b>Level 2: Supervisory</b><br/>HMIs, station systems<br/>closed-mode MAB<br/>for devices without 802.1X"]
+  L1["<b>Levels 1 and 0: Control and field</b><br/>train control, PLCs, signals<br/>agentless, passive TAPs<br/>data diode out"]
+  L4 -->|conduit:<br/>firewall, jump host| L35
+  L35 -->|conduit:<br/>firewall, monitoring| L3
+  L3 <-->|security groups,<br/>MAB| L2
+  L2 ~~~ L1
+  L1 -.->|one way out,<br/>data diode| L2
+
+  style L4 fill:#1f6feb,color:#fff,stroke:none
+  style L35 fill:#6e40c9,color:#fff,stroke:none
+  style L3 fill:#1a7f37,color:#fff,stroke:none
+  style L2 fill:#1a7f37,color:#fff,stroke:none
+  style L1 fill:#cf222e,color:#fff,stroke:none
+```
+
+| Level | What I do there | Tools |
+|---|---|---|
+| 4 and 5, enterprise IT | ISE identity and Zero Trust, SD-Access, Catalyst Center, firewalls, cloud links | [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health) |
+| 3.5, OT DMZ | Jump hosts, patch relay, historian replica, vendor access with MFA; every conduit checked against real traffic | [ot-zone-conduit-check](https://github.com/a-ayrapetov/ot-zone-conduit-check) |
+| 3, operations | Security groups across train control, SCADA, fire alarm, elevators, fare collection and CCTV, mapped to IEC 62443; NDR sensors | [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) |
+| 2, supervisory | Closed-mode MAB for devices that cannot run 802.1X, AAA hardening, asset discovery | [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit) |
+| 1 and 0, control and field | Safety systems stay agentless; passive TAPs, data diode out | [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map) |
+
 ## How the work fits together
 
 One defensive capability, from requirement to end state. Each phase ends at a decision point, and the plan moves on only when the condition on the line is met.
