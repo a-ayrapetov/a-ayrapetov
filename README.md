@@ -37,40 +37,6 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 
 Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Meraki, Nexus, Secure Firewall, Secure Network Analytics, Gigamon, Nozomi, Darktrace, Python with Netmiko, PowerShell.
 
-## How the work fits together
-
-One defensive capability, from requirement to end state. Each phase ends at a decision point, and the plan moves on only when the condition on the line is met.
-
-```mermaid
-%%{init: {"flowchart": {"rankSpacing": 26, "nodeSpacing": 24}}}%%
-flowchart LR
-  R([Requirement]) --> P1[Phase 1<br/>Assess] --> D1{DP 1}
-  D1 -->|open| P1
-  D1 -->|known| P2[Phase 2<br/>Develop] --> D2{DP 2}
-  D2 -->|fails| P2
-  D2 -->|holds| P3[Phase 3<br/>Deliver] --> D3{DP 3}
-  D3 -->|fail| H([Hold and<br/>roll back])
-  D3 -->|pass| P4[Phase 4<br/>Operate,<br/>defend] --> D4{DP 4}
-  D4 -->|steady| E([End state:<br/>in service])
-  D4 -->|finding| S([New<br/>requirement])
-
-  style R fill:#1f6feb,color:#fff,stroke:none
-  style S fill:#1f6feb,color:#fff,stroke:none
-  style E fill:#1a7f37,color:#fff,stroke:none
-  style H fill:#cf222e,color:#fff,stroke:none
-  style D1 fill:#6e40c9,color:#fff,stroke:none
-  style D2 fill:#6e40c9,color:#fff,stroke:none
-  style D3 fill:#6e40c9,color:#fff,stroke:none
-  style D4 fill:#6e40c9,color:#fff,stroke:none
-```
-
-| Decision point | Question | If yes | If no | What informs the decision |
-|---|---|---|---|---|
-| DP 1 | Are the assets and the gaps known? | Phase 2 | Stay in Phase 1 | requirements-trace (being built), [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit) |
-| DP 2 | Does the design hold against real traffic? | Phase 3 | Redesign in Phase 2 | ot-zone-conduit-check (being built), [closed-mode MAB rollout](playbooks/closed-mode-mab-site-rollout.md) |
-| DP 3 | Do the lockout and rollback checks pass? | The change goes in | Hold the change, roll back | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [production change by script](playbooks/gated-production-change.md) |
-| DP 4 | Is there a finding from health, drift or detection? | New requirement, back to Phase 1 | End state: in service | [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift), ndr-coverage-map (being built), [NDR alarm noise loop](playbooks/ndr-alarm-noise-reduction-loop.md) |
-
 ## Recent field work
 
 Anonymized.
