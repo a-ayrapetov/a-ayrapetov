@@ -72,38 +72,6 @@ flowchart LR
 
 ## How the work fits together
 
-One defensive capability, from requirement to end state. Each phase ends at a decision point, and the plan moves on only when the condition on the line is met.
-
-```mermaid
-%%{init: {"flowchart": {"rankSpacing": 26, "nodeSpacing": 20}}}%%
-flowchart LR
-  R([Requirement]) --> P1["<b>Phase 1: Assess</b><br/>ot-asset-inventory<br/>ios-hardening-audit<br/>requirements-trace (next)"] --> D1{DP 1}
-  D1 -->|gaps known| P2["<b>Phase 2: Develop</b><br/>ot-zone-conduit-check<br/>closed-mode MAB rollout"] --> D2{DP 2}
-  D2 -->|design holds| P3["<b>Phase 3: Deliver</b><br/>aaa-lockout-check<br/>change by script"] --> D3{DP 3}
-  D3 -->|fail| H([Hold and<br/>roll back])
-  D3 -->|pass| P4["<b>Phase 4: Operate, defend</b><br/>ise-health-audit<br/>ise-endpoint-explain<br/>cisco-interface-health<br/>cisco-config-drift<br/>ndr-coverage-map"] --> D4{DP 4}
-  D4 -->|steady| E([End state:<br/>in service])
-  D4 -->|finding| S([New<br/>requirement])
-
-  style R fill:#1f6feb,color:#fff,stroke:none
-  style S fill:#1f6feb,color:#fff,stroke:none
-  style E fill:#1a7f37,color:#fff,stroke:none
-  style H fill:#cf222e,color:#fff,stroke:none
-  style D1 fill:#6e40c9,color:#fff,stroke:none
-  style D2 fill:#6e40c9,color:#fff,stroke:none
-  style D3 fill:#6e40c9,color:#fff,stroke:none
-  style D4 fill:#6e40c9,color:#fff,stroke:none
-```
-
-| Decision point | Question | If yes | If no | What informs the decision |
-|---|---|---|---|---|
-| DP 1 | Are the assets and the gaps known? | Phase 2 | Stay in Phase 1 | requirements-trace (being built), [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit) |
-| DP 2 | Does the design hold against real traffic? | Phase 3 | Redesign in Phase 2 | [ot-zone-conduit-check](https://github.com/a-ayrapetov/ot-zone-conduit-check), [closed-mode MAB rollout](playbooks/closed-mode-mab-site-rollout.md) |
-| DP 3 | Do the lockout and rollback checks pass? | The change goes in | Hold the change, roll back | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [production change by script](playbooks/gated-production-change.md) |
-| DP 4 | Is there a finding from health, drift or detection? | New requirement, back to Phase 1 | End state: in service | [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift), [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map), [NDR alarm noise loop](playbooks/ndr-alarm-noise-reduction-loop.md) |
-
-### The same work as a full map
-
 Every engagement runs on the same six steps. Each step ends at a gate, and the work moves on only when the gate's answer is yes. A no sends it back along the red line to the step named on it, so nothing reaches production on hope.
 
 <p align="center"><a href="https://a-ayrapetov.github.io/workflow/"><b>Open the full-screen version</b></a>: walk it step by step, see the proof each step leaves behind, and follow two worked examples.</p>
