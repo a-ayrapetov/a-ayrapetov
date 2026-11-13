@@ -1,0 +1,13 @@
+# Runs the github-ai workflow tests whenever the workflow or its tests change (no secrets, no network).
+name: github-ai-test
+on:
+  pull_request: { paths: ['.github/workflows/github-ai.yml', '.github/tests/**'] }
+  push: { branches: [main], paths: ['.github/workflows/github-ai.yml', '.github/tests/**'] }
+permissions: { contents: read }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: node --version && node .github/tests/github-ai.test.mjs .github/workflows/github-ai.yml

@@ -1,5 +1,6 @@
 # Cloudflare AI on GitHub: reviews every pull request and triages every new issue. Model: Workers AI gpt-oss-120b.
 # Secrets: CF_AI_TOKEN (Cloudflare token with Workers AI only), CF_ACCOUNT_ID. Installed by SharedKB\tools\github-ai-rollout.ps1.
+# Tests: node .github/tests/github-ai.test.mjs .github/workflows/github-ai.yml
 name: github-ai
 on:
   pull_request: { types: [opened, synchronize, reopened, ready_for_review] }
@@ -16,9 +17,16 @@ jobs:
         env: { CF_AI_TOKEN: "${{ secrets.CF_AI_TOKEN }}", CF_ACCOUNT_ID: "${{ secrets.CF_ACCOUNT_ID }}" }
         with:
           script: |
-            // CHANGED 2026-11-13: the review comment came back empty. Workers AI defaults max_tokens to 256 and this reasoning model
-            // spends that on thinking, so no text was left; and `??` kept an empty `response` string instead of reading the other shapes.
-            // Now: max_tokens set, every known response shape read, and an empty answer fails the job instead of posting a blank comment.
+            // CHANGED 2026-11-13 (empty comments): max_tokens set, every known reply shape read, an empty answer fails the job.
+            // CHANGED 2026-11-13 (review on #3): a cut-off reply fails, network/429/5xx get one retry, a non-JSON reply shows its start.
+            // CHANGED 2026-11-13 (review v2, after a review on sharedkb #8 claimed variables were undefined that were defined
+            // outside the diff hunks): the model gets the full changed files, must quote the line behind every point, and points
+            // whose quote is not in the code are dropped; severity and at most 10 points; one comment per PR, edited on each push;
+            // a PR merged before the review finished is flagged in the comment.
+            const MODEL = 'gpt-oss-120b';
+            const MARK = '<!-- github-ai-review -->';
+            const FILE_CAP = 40000, FILES_TOTAL = 90000, DIFF_CAP = 40000; // characters sent to the model
+            if (!process.env.CF_AI_TOKEN || !process.env.CF_ACCOUNT_ID) throw new Error('CF_AI_TOKEN or CF_ACCOUNT_ID is not set (GitHub does not pass secrets to pull requests from forks)');
             const text = (o) => {
               if (typeof o?.response === 'string' && o.response.trim()) return o.response;
               if (typeof o?.output_text === 'string' && o.output_text.trim()) return o.output_text;
@@ -26,10 +34,6 @@ jobs:
               if (Array.isArray(o?.output)) return o.output.filter((x) => x?.type !== 'reasoning' && Array.isArray(x?.content)).flatMap((x) => x.content).map((p) => (typeof p === 'string' ? p : p?.text ?? '')).join('');
               return '';
             };
-            // CHANGED 2026-11-13 (from the AI review on #3): a reply cut off at max_tokens now fails instead of posting half a review;
-            // a network error, 429 or 5xx gets one retry; a non-JSON reply shows its first 200 characters; model name in one place.
-            const MODEL = 'gpt-oss-120b';
-            if (!process.env.CF_AI_TOKEN || !process.env.CF_ACCOUNT_ID) throw new Error('CF_AI_TOKEN or CF_ACCOUNT_ID is not set (GitHub does not pass secrets to pull requests from forks)');
             const cutOff = (o) => o?.choices?.[0]?.finish_reason === 'length' || o?.status === 'incomplete';
             const call = async (payload) => {
               for (let attempt = 1; ; attempt++) {
@@ -58,13 +62,60 @@ jobs:
               if (!t) throw new Error(`Workers AI returned no text. Result keys: ${Object.keys(res).join(',')}; usage: ${JSON.stringify(res.usage ?? null)}`);
               return t;
             };
+            const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
+            const code = (s) => { const t = norm(s).slice(0, 200); return t.includes('`') ? `\`\` ${t} \`\`` : `\`${t}\``; };
             const { owner, repo } = context.repo;
             if (context.eventName === 'pull_request') {
               const pr = context.payload.pull_request; if (pr.draft) return;
               const { data: diff } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number, mediaType: { format: 'diff' } });
-              const review = await ask('You are a senior reviewer. Review this pull request diff for bugs, security problems (secrets, injection, unsafe defaults), missing error handling and missing tests. Be specific: file and line, what is wrong, the fix. If it looks fine, say so in one line. Max 25 bullet points. Never repeat a secret value.',
-                `Title: ${pr.title}\n\n${pr.body ?? ''}\n\nDiff:\n${String(diff).slice(0, 60000)}`);
-              await github.rest.issues.createComment({ owner, repo, issue_number: pr.number, body: `**Cloudflare AI review** (${MODEL})\n\n${review}` });
+              // Full text of each changed file at the PR head, so "undefined" or "unused" claims can be checked against the whole file.
+              const files = await github.paginate(github.rest.pulls.listFiles, { owner, repo, pull_number: pr.number, per_page: 100 });
+              const full = []; const partial = []; let used = 0;
+              for (const f of files) {
+                if (f.status === 'removed') continue;
+                if (used >= FILES_TOTAL) { partial.push(f.filename); continue; }
+                try {
+                  const { data } = await github.rest.repos.getContent({ owner, repo, path: f.filename, ref: pr.head.sha });
+                  if (Array.isArray(data) || data.encoding !== 'base64' || data.size > FILE_CAP) { partial.push(f.filename); continue; }
+                  const body = Buffer.from(data.content, 'base64').toString('utf8');
+                  if (body.includes('\u0000')) { partial.push(f.filename); continue; } // binary
+                  const room = Math.min(FILE_CAP, FILES_TOTAL - used);
+                  if (body.length > room) partial.push(f.filename);
+                  full.push({ path: f.filename, body: body.slice(0, room) }); used += Math.min(body.length, room);
+                } catch { partial.push(f.filename); }
+              }
+              const numbered = full.map((f) => `=== ${f.path} ===\n${f.body.split('\n').map((l, i) => `${i + 1}| ${l}`).join('\n')}`).join('\n\n');
+              const raw = await ask(
+                'You review a pull request. You get its title and description, the unified diff, and the FULL text of each changed file at the PR head with numbered lines.\n' +
+                'Rules:\n1. Report only real problems in the changed code: bugs, security (secrets, injection, unsafe defaults), broken error handling, data loss. No style advice. No generic "add tests" or "add logging" unless you name the exact case that breaks.\n' +
+                '2. Before saying something is undefined, unused or missing, search the full file. If a file is listed as not provided in full, make no such claim about it.\n' +
+                '3. Every finding quotes the exact code line it is about, copied character for character, without the line number.\n' +
+                '4. Severity: BLOCKER (wrong result, data loss, secret exposure, security hole), SHOULD (real, limited impact), NIT (minor). At most 10 findings, most severe first.\n' +
+                '5. Never repeat a secret value.\n' +
+                'Reply with JSON only: {"summary": "one or two sentences", "findings": [{"severity": "BLOCKER|SHOULD|NIT", "file": "path", "line": 1, "quote": "exact code", "issue": "what is wrong and what happens", "fix": "the change"}]}. If nothing material, findings is [].',
+                `Title: ${pr.title}\n\nDescription:\n${pr.body ?? ''}\n\nDiff:\n${String(diff).slice(0, DIFF_CAP)}\n\nFull files at head:\n${numbered}\n\nNot provided in full: ${partial.join(', ') || 'none'}`);
+              const hay = norm(full.map((f) => f.body).join('\n') + '\n' + String(diff).split('\n').filter((l) => /^[+ ]/.test(l) && !l.startsWith('+++')).map((l) => l.slice(1)).join('\n'));
+              let out; try { out = JSON.parse(raw.match(/\{[\s\S]*\}/)?.[0] ?? ''); } catch { out = null; }
+              const SEV = ['BLOCKER', 'SHOULD', 'NIT'];
+              let bodyText;
+              if (!out || !Array.isArray(out.findings)) {
+                bodyText = `The model did not reply in the expected format, so nothing below was checked against the code. Treat it as unverified.\n\n${raw.slice(0, 6000)}`;
+              } else {
+                const sev = (f) => (SEV.includes(String(f?.severity).toUpperCase()) ? String(f.severity).toUpperCase() : 'SHOULD');
+                const kept = out.findings.filter((f) => norm(f?.quote).length >= 6 && hay.includes(norm(f.quote)));
+                const dropped = out.findings.length - kept.length;
+                const top = kept.sort((a, b) => SEV.indexOf(sev(a)) - SEV.indexOf(sev(b))).slice(0, 10);
+                const lines = top.map((f, i) => `${i + 1}. **${sev(f)}** \`${f.file ?? '?'}${f.line ? `:${f.line}` : ''}\`: ${norm(f.issue)}\n   ${code(f.quote)}\n   Fix: ${norm(f.fix)}`);
+                bodyText = `${norm(out.summary)}\n\n${lines.length ? lines.join('\n') : 'No material findings.'}\n\n` +
+                  `<sub>Advisory. Every point quotes the line it is about; ${dropped} point(s) whose quote was not found in the code were dropped.${partial.length ? ` Not read in full: ${partial.join(', ')}.` : ''}</sub>`;
+              }
+              const { data: now } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number });
+              const late = now.merged ? '**Note:** this pull request was merged before the review finished. Open a follow-up pull request for any BLOCKER below.\n\n' : '';
+              const body = `**Cloudflare AI review** (${MODEL}) for ${String(pr.head.sha).slice(0, 7)}\n${MARK}\n\n${late}${bodyText}`;
+              const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number: pr.number, per_page: 100 });
+              const mine = comments.find((c) => c.user?.type === 'Bot' && String(c.body ?? '').includes(MARK));
+              if (mine) await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
+              else await github.rest.issues.createComment({ owner, repo, issue_number: pr.number, body });
             } else if (context.eventName === 'issues') {
               const is = context.payload.issue;
               const { data: labels } = await github.rest.issues.listLabelsForRepo({ owner, repo, per_page: 100 });
