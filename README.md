@@ -28,7 +28,7 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 
 | Area | In practice |
 |---|---|
-| **OT/ICS security** | Defensive cyber architecture for a large North American public transit operator, across its rail, subway and police networks: about 8,800 core and distribution systems kept under control, and more than 100,000 endpoints scanned every day. About 30 security groups across train control, SCADA, fire alarm, elevators, fare collection and CCTV, mapped to IEC 62443, under the TSA rail security directives (the US counterpart to NIS2 and KRITIS). |
+| **OT/ICS security** | Security architecture for the operational networks of a large US transit agency: identity, segmentation and detection across train control, SCADA, fire alarm, elevators, fare collection and CCTV, with security groups mapped to IEC 62443 under the TSA rail security directives. |
 | **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech company's campus network and made it stable: 915 endpoints on certificate-based EAP-TLS across eight virtual networks. |
 | **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules, then worked them down by classifying the hosts behind them instead of switching rules off. |
 | **Automation** | Python AAA hardening on 6,000+ switches. Asset discovery that found thousands of OT devices missing from every inventory. The tools below are the public, generic versions of this kind of work. |
