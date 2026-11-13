@@ -1,5 +1,6 @@
 <h1 align="center">Arkadiy Ayrapetov</h1>
-<p align="center"><b>Cyber Security Architect</b> &nbsp;·&nbsp; Cisco ISE, TrustSec, SD-Access, Catalyst Center &nbsp;·&nbsp; OT and regulated environments &nbsp;·&nbsp; CCNP Enterprise</p>
+<p align="center"><b>Cybersecurity Architect</b> &nbsp;·&nbsp; OT/ICS &nbsp;·&nbsp; Zero Trust &nbsp;·&nbsp; Cisco ISE, TrustSec, SD-Access, Catalyst Center</p>
+<p align="center">CCNP Enterprise, Architecture and Design &nbsp;·&nbsp; CySA+ &nbsp;·&nbsp; Security+ &nbsp;·&nbsp; 14 years &nbsp;·&nbsp; open to roles in Germany, across Europe and in the US</p>
 
 <p align="center">
   <img alt="Read-only by default" src="https://img.shields.io/badge/tools-read--only%20by%20default-2ea44f">
@@ -8,7 +9,17 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey">
 </p>
 
-Fourteen years of making network access control and segmentation actually hold in production: 802.1X and MAB rollouts, TrustSec policy, ISE at scale, campus fabrics, and industrial networks where availability comes first. The tools here are the ones I reach for on real engagements, rewritten so they carry no customer and anyone can run them.
+Fourteen years securing enterprise and industrial networks. I scope, design, build, automate and document, and I am strongest where security, network and automation meet. Everything public here is rewritten from scratch and carries no customer data.
+
+## What I do
+
+| Area | In practice |
+|---|---|
+| **OT/ICS security** | Security architecture for 472 stations and 1,400 switches on North America's largest rail transit network. About 30 security tags across train control, SCADA, fire alarm, elevators, fare collection and CCTV, mapped to IEC 62443, under the TSA rail security directives (the US counterpart to NIS2 and KRITIS). |
+| **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech campus with broken authentication; 915 endpoints now run EAP-TLS across eight virtual networks. |
+| **Visibility and detection** | Gigamon TAPs on train control feeding Nozomi and Darktrace, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules and tuned them out. |
+| **Automation** | Python AAA hardening on 6,000+ switches. A discovery sweep that found about 5,000 OT assets missing from every inventory. The tools below are the public, generic versions of this kind of work. |
+| **Campus, WAN and data center** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Meraki and SD-WAN migrations, Nexus vPC, Secure Firewall. |
 
 ## Which tool, when
 
@@ -27,11 +38,11 @@ Two of the tools work entirely offline on text you already have.
 
 ```bash
 # Paste "show interfaces" output from one switch or fifty; get the ports that need attention, ranked
-pip install cisco-interface-health
+pip install git+https://github.com/a-ayrapetov/cisco-interface-health
 ifhealth show_interfaces.txt
 
 # Point it at a folder of running-configs; get every hardening gap with the fix
-pip install ios-hardening-audit
+pip install git+https://github.com/a-ayrapetov/ios-hardening-audit
 ios-harden configs/*.cfg --csv findings.csv
 ```
 
