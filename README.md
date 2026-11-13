@@ -20,7 +20,7 @@
 
 Fourteen years securing enterprise and industrial networks. I scope, design, build, automate and document, and I am strongest where security, network and automation meet. Everything public here is rewritten from scratch and carries no customer data.
 
-**Hiring?** [What I do](#what-i-do) · [Recent field work](#recent-field-work) · [Contact](#contact)
+**Hiring?** [What I do](#what-i-do) · [Recent field work](#recent-field-work) · [Field notes](#field-notes) · [Contact](#contact)
 &nbsp;&nbsp;|&nbsp;&nbsp;
 **Hands-on?** [Which tool, when](#which-tool-when) · [Try one in sixty seconds](#try-one-in-sixty-seconds-no-network-required) · [Playbooks](#how-i-work-playbooks)
 
@@ -30,8 +30,8 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 |---|---|
 | **OT/ICS security** | Defensive cyber architecture for a large North American public transit operator, across its rail, subway and police networks: about 8,800 core and distribution systems kept under control, and more than 100,000 endpoints scanned every day. About 30 security groups across train control, SCADA, fire alarm, elevators, fare collection and CCTV, mapped to IEC 62443, under the TSA rail security directives (the US counterpart to NIS2 and KRITIS). |
 | **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech company's campus network and made it stable: 915 endpoints on certificate-based EAP-TLS across eight virtual networks. |
-| **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules and tuned them out. |
-| **Automation** | Python AAA hardening on 6,000+ switches. A discovery sweep that found about 5,000 OT assets missing from every inventory. The tools below are the public, generic versions of this kind of work. |
+| **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules, then worked them down by classifying the hosts behind them instead of switching rules off. |
+| **Automation** | Python AAA hardening on 6,000+ switches. Asset discovery that found thousands of OT devices missing from every inventory. The tools below are the public, generic versions of this kind of work. |
 | **Campus, WAN and data center** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Meraki and SD-WAN migrations, Nexus vPC, Secure Firewall. |
 
 Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Meraki, Nexus, Secure Firewall, Secure Network Analytics, Gigamon, Nozomi, Darktrace, Python with Netmiko, PowerShell.
@@ -60,6 +60,8 @@ Anonymized.
 
 | The situation | Run | What you get back |
 |---|---|---|
+| "What is on this OT network?" and nobody may scan it | [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory) | Endpoints per switch port from ARP, MAC, interface and CDP/LLDP output, hidden switches and MACs with no IP flagged, and a diff of new, gone and moved devices between runs |
+| Moving switch logins to ISE TACACS+ tomorrow | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check) | Every AAA shape in the config that can lock you out: no working fallback, console authorization, undefined lists, a dead source interface, a management VRF mismatch |
 | "Why did this laptop land in the wrong VLAN?" | [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain) | The live session plus an authentication timeline: switch and port, authorization profile, SGT, matched rule, and every failure reason in plain English |
 | Change window tomorrow. Is ISE healthy? | [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit) | Nodes down, missing admin HA, system and trusted certificates expired or expiring within 30 and 60 days |
 | "Did anyone touch the switches since the last approved state?" | [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) | A baseline of every running-config and a clean diff of anything changed outside change control |
@@ -69,7 +71,7 @@ Anonymized.
 
 ## Try one in sixty seconds, no network required
 
-Two of the tools work entirely offline on text you already have.
+Four of the tools work entirely offline on text you already have. Three of them:
 
 ```bash
 # Paste "show interfaces" output from one switch or fifty; get the ports that need attention, ranked
@@ -79,6 +81,10 @@ ifhealth show_interfaces.txt
 # Point it at a folder of running-configs; get every hardening gap with the fix
 pip install git+https://github.com/a-ayrapetov/ios-hardening-audit
 ios-harden configs/*.cfg --csv findings.csv
+
+# Same folder of configs; find what would lock you out of a TACACS+ change before you make it
+pip install git+https://github.com/a-ayrapetov/aaa-lockout-check
+aaa-lockout-check "configs/*.cfg"
 ```
 
 ## How I work: playbooks
@@ -105,6 +111,8 @@ The gates and proofs those two describe are code: [netops_gates_and_proofs.py](p
 | cisco-config-drift | [![ci](https://github.com/a-ayrapetov/cisco-config-drift/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/cisco-config-drift/actions) | Python |
 | cisco-interface-health | [![ci](https://github.com/a-ayrapetov/cisco-interface-health/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/cisco-interface-health/actions) | Python |
 | ios-hardening-audit | [![ci](https://github.com/a-ayrapetov/ios-hardening-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/ios-hardening-audit/actions) | Python |
+| ot-asset-inventory | [![ci](https://github.com/a-ayrapetov/ot-asset-inventory/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/ot-asset-inventory/actions) | Python |
+| aaa-lockout-check | [![ci](https://github.com/a-ayrapetov/aaa-lockout-check/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/aaa-lockout-check/actions) | Python |
 | win-security-posture-audit | [![ci](https://github.com/a-ayrapetov/win-security-posture-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/win-security-posture-audit/actions) | PowerShell |
 
 </details>
@@ -125,6 +133,17 @@ The gates and proofs those two describe are code: [netops_gates_and_proofs.py](p
 New tools start from [repo-template](https://github.com/a-ayrapetov/repo-template) and land here once they pass review.
 
 </details>
+
+## Field notes
+
+Longer write-ups of the same work on [a-ayrapetov.github.io](https://a-ayrapetov.github.io):
+
+- [Inventory an OT network without sending it a single packet](https://a-ayrapetov.github.io/2026/11/13/passive-ot-asset-inventory.html)
+- [Moving switches to ISE TACACS+ without locking yourself out](https://a-ayrapetov.github.io/2026/11/13/tacacs-migration-without-lockouts.html)
+- [Closing access ports on industrial switches, one port at a time](https://a-ayrapetov.github.io/2026/11/13/closed-mode-mab-one-port-at-a-time.html)
+- [Cutting NDR alarm noise without going blind](https://a-ayrapetov.github.io/2026/11/13/ndr-alarm-noise-without-going-blind.html)
+- [An AI assistant on a production network that never gets a session](https://a-ayrapetov.github.io/2026/11/13/ai-assistant-that-never-touches-the-network.html)
+- [When TrustSec looks like a routing problem](https://a-ayrapetov.github.io/2026/10/07/trustsec-looks-like-routing.html)
 
 ## Contact
 
