@@ -141,7 +141,7 @@ const cases = [
   { name: 'missing or date Retry-After waits 5 s', seq: [reply(502, '<html>x</html>', { 'retry-after': 'Wed, 21 Oct 2026 07:28:00 GMT' }), review()], check: () => delays.join() === '5000' },
   { name: '502 HTML twice shows the body', seq: [reply(502, '<html>Bad gateway</html>'), reply(502, '<html>Bad gateway</html>')], errRe: /HTTP 502.*not JSON.*<html>Bad gateway/ },
   { name: '400 not retried', seq: [bad(400, 'bad input'), review()], errRe: /HTTP 400.*bad input/ },
-  { name: 'max_tokens is sent', seq: [review()], check: (h) => h.calls[0].body.max_tokens === 8192 },
+  { name: 'max_tokens 16384 is sent (8192 was cut off live on a 28k-token prompt)', seq: [review()], check: (h) => h.calls[0].body.max_tokens === 16384 },
   // secrets
   { name: 'missing secrets fail clearly', seq: [review()], env: {}, errRe: /CF_AI_TOKEN or CF_ACCOUNT_ID is not set/ },
   { name: 'one secret missing fails clearly', seq: [review()], env: { CF_AI_TOKEN: 'x' }, errRe: /CF_AI_TOKEN or CF_ACCOUNT_ID is not set/ },

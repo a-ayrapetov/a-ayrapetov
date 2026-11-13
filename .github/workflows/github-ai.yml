@@ -65,7 +65,7 @@ jobs:
               }
             };
             const ask = async (system, user) => {
-              const res = await call(JSON.stringify({ messages: [{ role: 'system', content: system }, { role: 'user', content: user }], max_tokens: 8192 }));
+              const res = await call(JSON.stringify({ messages: [{ role: 'system', content: system }, { role: 'user', content: user }], max_tokens: 16384 })); // EDIT: 8192 was cut off live (sharedkb #7, 28k-token prompt, 2026-11-13); about 100 tokens/s, so 16384 fits the 240 s timeout
               if (cutOff(res)) throw new Error(`Workers AI reply was cut off at max_tokens; not posting a partial answer. usage: ${JSON.stringify(res.usage ?? null)}`);
               const t = text(res).trim();
               if (!t) throw new Error(`Workers AI returned no text. Result keys: ${Object.keys(res).join(',')}; usage: ${JSON.stringify(res.usage ?? null)}`);
