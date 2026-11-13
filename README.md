@@ -52,16 +52,6 @@ flowchart LR
 
 Day one is a hardening audit and a drift baseline. ISE health runs before anything can take authentication down. After that, every "can't connect" goes through ise-endpoint-explain and every "it's slow" through cisco-interface-health.
 
-## Field Playbooks
-
-The tools are half of it. The other half is how the work is run. These are the methods I use on engagements, written so a colleague or an AI assistant can follow them cold.
-
-| Playbook | Use it when |
-|---|---|
-| [Scripts a person runs and the run proves](playbooks/operator-run-scripts.md) | The author of a script is not the one who runs it |
-| [Production change by script](playbooks/gated-production-change.md) | A change has to reach a production device, with gates, backup, verify and rollback |
-| [One record](playbooks/one-record-operations.md) | Work is shared between people and AI assistants and has to survive a handover |
-
 ## Build status
 
 | Tool | CI | Language |
@@ -82,6 +72,7 @@ Method notes from the same engagements, with no customer in them.
 | [AI assistant, human at the keyboard](playbooks/ai-assisted-network-operations.md) | You want an AI assistant on production network work without it guessing or touching a device |
 | [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) | You are closing access ports for devices that cannot do 802.1X |
 | [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) | Your flow analytics platform alarms all day and nobody looks any more |
+| [Production change by script](playbooks/gated-production-change.md) | A change has to reach a production device and the way back must be ready before the first line goes in |
 | [The script contract](playbooks/script-contract.md) | You write automation that someone else runs on a host you cannot reach |
 | [Two sources and a proof](playbooks/two-sources-and-a-proof.md) | Someone asks "how much", "where" or "who" about a network and the answer will drive a decision |
 
