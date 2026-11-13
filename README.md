@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img alt="Arkadiy Ayrapetov, Cybersecurity Architect. OT/ICS, Zero Trust, Cisco ISE, TrustSec, SD-Access, Catalyst Center" src="assets/banner-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg?v=3">
+  <img alt="Arkadiy Ayrapetov, Cybersecurity Architect. OT/ICS, Zero Trust, Cisco ISE, TrustSec, SD-Access, Catalyst Center" src="assets/banner-light.svg?v=3" width="100%">
 </picture>
 
 <p align="center">CCNP Enterprise, Architecture and Design &nbsp;·&nbsp; CySA+ &nbsp;·&nbsp; Security+ &nbsp;·&nbsp; based in New York &nbsp;·&nbsp; open to roles in Germany, across Europe and in the US</p>
@@ -76,8 +76,8 @@ The Purdue chart above shows **where** the work happens. This shows **how**: the
 
 <a href="https://a-ayrapetov.github.io/workflow/">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/workflow-dark.svg">
-  <img alt="Six-step battle drill: orders, recon, plan, rehearse, execute, hold the ground. Each step ends with a go/no-go check; a no-go goes back along the red line to the step named on it." src="assets/workflow-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/workflow-dark.svg?v=3">
+  <img alt="Six-step battle drill: orders, recon, plan, rehearse, execute, hold the ground. Each step ends with a go/no-go check; a no-go goes back along the red line to the step named on it." src="assets/workflow-light.svg?v=3" width="100%">
 </picture>
 </a>
 
