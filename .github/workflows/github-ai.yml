@@ -9,7 +9,8 @@ permissions: { contents: read, pull-requests: write, issues: write }
 concurrency: { group: "github-ai-${{ github.event.pull_request.number || github.event.issue.number }}", cancel-in-progress: true }
 jobs:
   ai:
-    if: github.actor != 'dependabot[bot]' && github.actor != 'github-actions[bot]'
+    # ADDED 2026-11-13: on a public repo anyone can open an issue, and issue events get the secrets; triage only for people with a role here
+    if: github.actor != 'dependabot[bot]' && github.actor != 'github-actions[bot]' && (github.event_name != 'issues' || contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
