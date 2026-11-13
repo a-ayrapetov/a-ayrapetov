@@ -1,54 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="856" viewBox="0 0 880 856" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-label="Six steps from requirement to in service, each step ending at a gate; a failed gate goes back to the step named on its red line" xmlns:c2pa="http://c2pa.org/manifest">
-<line x1="150" y1="44" x2="150" y2="816" stroke="#5fae8e" stroke-width="8" stroke-linecap="round"/>
-<path d="M 144 248.0 C 116 248.0, 116 248.0, 116 228.0 L 116 196 C 116 176, 116 176, 124 176" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="126,176 116,170 116,182" fill="#f85149"/>
-<path d="M 144 380.0 C 116 380.0, 116 380.0, 116 360.0 L 116 328 C 116 308, 116 308, 124 308" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="126,308 116,302 116,314" fill="#f85149"/>
-<path d="M 144 512.0 C 116 512.0, 116 512.0, 116 492.0 L 116 460 C 116 440, 116 440, 124 440" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="126,440 116,434 116,446" fill="#f85149"/>
-<path d="M 144 644.0 C 102 644.0, 102 644.0, 102 624.0 L 102 460 C 102 440, 102 440, 124 440" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="126,440 116,434 116,446" fill="#f85149"/>
-<path d="M 144 776.0 C 24 776.0, 24 776.0, 24 756.0 L 24 64 C 24 44, 24 44, 124 44" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="6 5"/>
-<polygon points="126,44 116,38 116,50" fill="#f85149"/>
-<circle cx="150" cy="44" r="20" fill="#0d1117" stroke="#5fae8e" stroke-width="6"/>
-<text x="150" y="51" text-anchor="middle" font-size="19" font-weight="800" fill="#5fae8e">1</text>
-<text x="190" y="46" font-size="22" font-weight="700" fill="#e6edf3">Requirement</text>
-<text x="190" y="71" font-size="16" fill="#9198a1">The ask becomes a control with a scope and a pass condition.</text>
-<circle cx="150" cy="176" r="20" fill="#0d1117" stroke="#5fae8e" stroke-width="6"/>
-<text x="150" y="183" text-anchor="middle" font-size="19" font-weight="800" fill="#5fae8e">2</text>
-<text x="190" y="178" font-size="22" font-weight="700" fill="#e6edf3">Assess</text>
-<text x="190" y="203" font-size="16" fill="#9198a1">Passive inventory, every config baselined and audited, gaps per zone.</text>
-<rect x="190" y="233.0" width="16" height="30" rx="8" fill="#e6edf3"/>
-<circle cx="198" cy="242.0" r="4.5" fill="#3fb950"/><circle cx="198" cy="255.0" r="4.5" fill="#f85149"/>
-<text x="218" y="254.0" font-size="16"><tspan font-weight="700" fill="#e6edf3">Assets and gaps known?</tspan><tspan dx="14" fill="#3fb950" font-weight="600">yes: on to step 3</tspan><tspan dx="14" fill="#f85149" font-weight="600">no: keep assessing</tspan></text>
-<circle cx="150" cy="308" r="20" fill="#0d1117" stroke="#5fae8e" stroke-width="6"/>
-<text x="150" y="315" text-anchor="middle" font-size="19" font-weight="800" fill="#5fae8e">3</text>
-<text x="190" y="310" font-size="22" font-weight="700" fill="#e6edf3">Design</text>
-<text x="190" y="335" font-size="16" fill="#9198a1">Zones, conduits and access policy, replayed against real traffic.</text>
-<rect x="190" y="365.0" width="16" height="30" rx="8" fill="#e6edf3"/>
-<circle cx="198" cy="374.0" r="4.5" fill="#3fb950"/><circle cx="198" cy="387.0" r="4.5" fill="#f85149"/>
-<text x="218" y="386.0" font-size="16"><tspan font-weight="700" fill="#e6edf3">Design holds on real traffic?</tspan><tspan dx="14" fill="#3fb950" font-weight="600">yes: on to step 4</tspan><tspan dx="14" fill="#f85149" font-weight="600">no: redesign</tspan></text>
-<circle cx="150" cy="440" r="20" fill="#0d1117" stroke="#5fae8e" stroke-width="6"/>
-<text x="150" y="447" text-anchor="middle" font-size="19" font-weight="800" fill="#5fae8e">4</text>
-<text x="190" y="442" font-size="22" font-weight="700" fill="#e6edf3">Prepare the change</text>
-<text x="190" y="467" font-size="16" fill="#9198a1">Procedure, lockout check, health check, rollback written first.</text>
-<rect x="190" y="497.0" width="16" height="30" rx="8" fill="#e6edf3"/>
-<circle cx="198" cy="506.0" r="4.5" fill="#3fb950"/><circle cx="198" cy="519.0" r="4.5" fill="#f85149"/>
-<text x="218" y="518.0" font-size="16"><tspan font-weight="700" fill="#e6edf3">Lockout and rollback clear?</tspan><tspan dx="14" fill="#3fb950" font-weight="600">yes: on to step 5</tspan><tspan dx="14" fill="#f85149" font-weight="600">no: hold, fix, check again</tspan></text>
-<circle cx="150" cy="572" r="20" fill="#0d1117" stroke="#5fae8e" stroke-width="6"/>
-<text x="150" y="579" text-anchor="middle" font-size="19" font-weight="800" fill="#5fae8e">5</text>
-<text x="190" y="574" font-size="22" font-weight="700" fill="#e6edf3">Deliver</text>
-<text x="190" y="599" font-size="16" fill="#9198a1">One batch at a time, every batch proven before the next.</text>
-<rect x="190" y="629.0" width="16" height="30" rx="8" fill="#e6edf3"/>
-<circle cx="198" cy="638.0" r="4.5" fill="#3fb950"/><circle cx="198" cy="651.0" r="4.5" fill="#f85149"/>
-<text x="218" y="650.0" font-size="16"><tspan font-weight="700" fill="#e6edf3">Every proof passed?</tspan><tspan dx="14" fill="#3fb950" font-weight="600">yes: on to step 6</tspan><tspan dx="14" fill="#f85149" font-weight="600">no: roll back the batch, step 4</tspan></text>
-<circle cx="150" cy="704" r="20" fill="#0d1117" stroke="#5fae8e" stroke-width="6"/>
-<text x="150" y="711" text-anchor="middle" font-size="19" font-weight="800" fill="#5fae8e">6</text>
-<text x="190" y="706" font-size="22" font-weight="700" fill="#e6edf3">Operate and defend</text>
-<text x="190" y="731" font-size="16" fill="#9198a1">Drift, health and detection checks keep running after handover.</text>
-<rect x="190" y="761.0" width="16" height="30" rx="8" fill="#e6edf3"/>
-<circle cx="198" cy="770.0" r="4.5" fill="#3fb950"/><circle cx="198" cy="783.0" r="4.5" fill="#f85149"/>
-<text x="218" y="782.0" font-size="16"><tspan font-weight="700" fill="#e6edf3">Any finding?</tspan><tspan dx="14" fill="#3fb950" font-weight="600">no: in service</tspan><tspan dx="14" fill="#f85149" font-weight="600">yes: new requirement, step 1</tspan></text>
-<circle cx="150" cy="816" r="10" fill="#3fb950"/>
-<text x="190" y="823" font-size="20" font-weight="700" fill="#3fb950">In service</text>
-<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTowNjBiYThjZi0wYTIxLTRlNzUtYTM0OC1mY2Q3ODFjZGZmOTMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaNQgLs+E4IuDETtDCSt6mvYAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo3MWI3ZWJmNS1iOTdlLTQ2NDQtODQ0Yy0xMTczOGM0ZjJmOTlscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoqFe566+eqjA8ErCO/Ll4FgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg0V+v38dDMnNA6QsSxMfMguEZMjr7Od+E/lB23Vu39IKkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaNEdvGcR8ygCahof4ENx8IgAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIKELU6xbCcV7TPFBEI7wX0axVbbX5OTq4n+glXltCcbVZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GRijZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjA2MGJhOGNmLTBhMjEtNGU3NS1hMzQ4LWZjZDc4MWNkZmY5My9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjcwNjYxNmM0LTg3NmUtNGYyOS1iMTVkLTU1ZDBkNDRkOTJhY3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDRX6/fx0Myc0DpCxLEx8yC4RkyOvs534T+UHbdW7f0gqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggcogl6pcftd3ya9wN50rZvpWVgPx76xtZnvz3u+J2eVOiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg0d1EULJNKNoC1nwLqXkkVAjvcZlF4Pm2n+MD5V8Wx950Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQIBapBvwt7lt/GqEvoxZvm8E+5u0oxSc05lFdYdYSUArOj8Hb4QSR04O9OK8dIu7If9BLgMXiEuW2OHEtyVknHY=</c2pa:manifest></metadata></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-label="Six phases from requirement to in service, with a decision point after each phase and the branch taken on a no">
+<defs><marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#6e7681"/></marker>
+<marker id="r" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#e5534b"/></marker></defs>
+<rect x="0.5" y="0.5" width="1279" height="299" rx="12" fill="#0d1117" stroke="#21262d"/>
+<line x1="168" y1="98" x2="179" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="326" y1="98" x2="337" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="368" y1="98" x2="379" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="526" y1="98" x2="537" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="568" y1="98" x2="579" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="726" y1="98" x2="737" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="768" y1="98" x2="779" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="926" y1="98" x2="937" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="968" y1="98" x2="979" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="1126" y1="98" x2="1137" y2="98" stroke="#6e7681" stroke-width="2" marker-end="url(#a)"/>
+<line x1="1168" y1="98" x2="1179" y2="98" stroke="#2f8f5b" stroke-width="2" marker-end="url(#a)"/>
+<rect x="22" y="58" width="146" height="148" rx="8" fill="#161b22" stroke="#30363d"/>
+<rect x="22" y="58" width="146" height="4" rx="2" fill="#4f9d7f"/>
+<text x="32" y="82" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4f9d7f" letter-spacing="1">PHASE 1</text>
+<text x="32" y="100" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#e6edf3">Requirement</text>
+<text x="32" y="120" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">Directive, finding or ask</text>
+<text x="32" y="134" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">becomes a testable control</text>
+<line x1="32" y1="154" x2="158" y2="154" stroke="#30363d"/>
+<text x="32" y="169" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">requirements-trace*</text>
+<text x="32" y="182" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">two-sources playbook</text>
+<rect x="180" y="58" width="146" height="148" rx="8" fill="#161b22" stroke="#30363d"/>
+<rect x="180" y="58" width="146" height="4" rx="2" fill="#4f9d7f"/>
+<text x="190" y="82" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4f9d7f" letter-spacing="1">PHASE 2</text>
+<text x="190" y="100" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#e6edf3">Assess</text>
+<text x="190" y="120" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">Inventory, baseline, audit;</text>
+<text x="190" y="134" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">gaps listed per zone</text>
+<line x1="190" y1="154" x2="316" y2="154" stroke="#30363d"/>
+<text x="190" y="169" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">ot-asset-inventory</text>
+<text x="190" y="182" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">ios-hardening-audit</text>
+<text x="190" y="195" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">cisco-config-drift</text>
+<rect x="380" y="58" width="146" height="148" rx="8" fill="#161b22" stroke="#30363d"/>
+<rect x="380" y="58" width="146" height="4" rx="2" fill="#4f9d7f"/>
+<text x="390" y="82" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4f9d7f" letter-spacing="1">PHASE 3</text>
+<text x="390" y="100" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#e6edf3">Design</text>
+<text x="390" y="120" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">Zones, conduits, 802.1X/MAB,</text>
+<text x="390" y="134" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">SGTs, proven on real flows</text>
+<line x1="390" y1="154" x2="516" y2="154" stroke="#30363d"/>
+<text x="390" y="169" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">zone-conduit-check*</text>
+<text x="390" y="182" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">closed-mode MAB</text>
+<rect x="580" y="58" width="146" height="148" rx="8" fill="#161b22" stroke="#30363d"/>
+<rect x="580" y="58" width="146" height="4" rx="2" fill="#4f9d7f"/>
+<text x="590" y="82" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4f9d7f" letter-spacing="1">PHASE 4</text>
+<text x="590" y="100" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#e6edf3">Prepare</text>
+<text x="590" y="120" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">Procedure, lockout check,</text>
+<text x="590" y="134" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">rollback written first</text>
+<line x1="590" y1="154" x2="716" y2="154" stroke="#30363d"/>
+<text x="590" y="169" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">aaa-lockout-check</text>
+<text x="590" y="182" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">ise-health-audit</text>
+<rect x="780" y="58" width="146" height="148" rx="8" fill="#161b22" stroke="#30363d"/>
+<rect x="780" y="58" width="146" height="4" rx="2" fill="#4f9d7f"/>
+<text x="790" y="82" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4f9d7f" letter-spacing="1">PHASE 5</text>
+<text x="790" y="100" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#e6edf3">Deliver</text>
+<text x="790" y="120" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">One batch at a time,</text>
+<text x="790" y="134" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">each proven before the next</text>
+<line x1="790" y1="154" x2="916" y2="154" stroke="#30363d"/>
+<text x="790" y="169" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">ise-endpoint-explain</text>
+<text x="790" y="182" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">cisco-interface-health</text>
+<rect x="980" y="58" width="146" height="148" rx="8" fill="#161b22" stroke="#30363d"/>
+<rect x="980" y="58" width="146" height="4" rx="2" fill="#4f9d7f"/>
+<text x="990" y="82" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#4f9d7f" letter-spacing="1">PHASE 6</text>
+<text x="990" y="100" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#e6edf3">Operate and defend</text>
+<text x="990" y="120" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">Drift, health and detection</text>
+<text x="990" y="134" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10.5" fill="#8b949e">keep running after handover</text>
+<line x1="990" y1="154" x2="1116" y2="154" stroke="#30363d"/>
+<text x="990" y="169" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">cisco-config-drift</text>
+<text x="990" y="182" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">ise-health-audit</text>
+<text x="990" y="195" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#7cc7a6">NDR noise loop</text>
+<path d="M353.0,83.0 L368.0,98 L353.0,113.0 L338.0,98 z" fill="#6e40c9"/>
+<text x="353.0" y="101.5" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#fff">DP1</text>
+<text x="353.0" y="34" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#8b949e">Assets and</text>
+<text x="353.0" y="46" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#e6edf3">gaps known?</text>
+<path d="M553.0,83.0 L568.0,98 L553.0,113.0 L538.0,98 z" fill="#6e40c9"/>
+<text x="553.0" y="101.5" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#fff">DP2</text>
+<text x="553.0" y="34" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#8b949e">Holds on</text>
+<text x="553.0" y="46" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#e6edf3">real traffic?</text>
+<path d="M753.0,83.0 L768.0,98 L753.0,113.0 L738.0,98 z" fill="#6e40c9"/>
+<text x="753.0" y="101.5" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#fff">DP3</text>
+<text x="753.0" y="34" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#8b949e">Lockout and</text>
+<text x="753.0" y="46" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#e6edf3">rollback clear?</text>
+<path d="M953.0,83.0 L968.0,98 L953.0,113.0 L938.0,98 z" fill="#6e40c9"/>
+<text x="953.0" y="101.5" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#fff">DP4</text>
+<text x="953.0" y="34" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#8b949e">Every proof</text>
+<text x="953.0" y="46" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#e6edf3">passed?</text>
+<path d="M1153.0,83.0 L1168.0,98 L1153.0,113.0 L1138.0,98 z" fill="#6e40c9"/>
+<text x="1153.0" y="101.5" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#fff">DP5</text>
+<text x="1153.0" y="34" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#8b949e">Any new</text>
+<text x="1153.0" y="46" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="600" fill="#e6edf3">finding?</text>
+<rect x="1180" y="80" width="80" height="36" rx="18" fill="#2f8f5b"/>
+<text x="1220.0" y="96" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#fff">END STATE</text>
+<text x="1220.0" y="109" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#fff">in service</text>
+<path d="M353.0,113.0 L353.0,224 L253.0,224 L253.0,209" fill="none" stroke="#e5534b" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<text x="303.0" y="220" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#e5534b">no: keep assessing</text>
+<path d="M553.0,113.0 L553.0,224 L453.0,224 L453.0,209" fill="none" stroke="#e5534b" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<text x="503.0" y="220" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#e5534b">no: redesign</text>
+<path d="M753.0,113.0 L753.0,224 L653.0,224 L653.0,209" fill="none" stroke="#e5534b" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<text x="703.0" y="220" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#e5534b">no: hold and fix</text>
+<path d="M953.0,113.0 L953.0,238 L653.0,238 L653.0,209" fill="none" stroke="#e5534b" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<text x="803.0" y="234" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#e5534b">no: roll back to 4</text>
+<path d="M1153.0,113.0 L1153.0,268 L95.0,268 L95.0,209" fill="none" stroke="#e5534b" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<text x="624.0" y="264" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9.5" fill="#e5534b">yes: new requirement</text>
+<text x="1260" y="288" text-anchor="end" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="9" fill="#8b949e">* being built</text>
+</svg>

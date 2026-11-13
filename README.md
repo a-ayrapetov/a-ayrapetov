@@ -69,27 +69,16 @@ flowchart LR
 | DP 3 | Do the lockout and rollback checks pass? | The change goes in | Hold the change, roll back | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [production change by script](playbooks/gated-production-change.md) |
 | DP 4 | Is there a finding from health, drift or detection? | New requirement, back to Phase 1 | End state: in service | [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift), [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map), [NDR alarm noise loop](playbooks/ndr-alarm-noise-reduction-loop.md) |
 
-### The same work as a full map
+### The same work, one line
 
-Every engagement runs on the same six steps. Each step ends at a gate, and the work moves on only when the gate's answer is yes. A no sends it back along the red line to the step named on it, so nothing reaches production on hope.
-
-<p align="center"><a href="https://a-ayrapetov.github.io/workflow/"><b>Open the full-screen version</b></a>: walk it step by step, see the proof each step leaves behind, and follow two worked examples.</p>
+Six phases, a decision point after each, and the branch taken on a no. Tools under each phase. [Walk it step by step](https://a-ayrapetov.github.io/workflow/).
 
 <a href="https://a-ayrapetov.github.io/workflow/">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/workflow-dark.svg">
-  <img alt="Six steps from requirement to in service. Each step ends at a gate; a failed gate goes back along the red line to the step named on it." src="assets/workflow-light.svg" width="100%">
+  <img alt="Six phases from requirement to end state: requirement, assess, design, prepare, deliver, operate and defend. A decision point follows each; a no sends the work back along the red line." src="assets/workflow-light.svg" width="100%">
 </picture>
 </a>
-
-| Step | What happens | Gate to move on | Tools and playbooks |
-|---|---|---|---|
-| **1. Requirement** | The ask (a directive, an audit finding, an incident, a client request) becomes a control with a scope and a pass condition. | None: straight to step 2. | requirements-trace (being built), [Two sources and a proof](playbooks/two-sources-and-a-proof.md) |
-| **2. Assess** | Endpoints per switch port from offline show output, every running-config baselined and audited, gaps listed per zone. | Assets and gaps known? No: keep assessing. | [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) |
-| **3. Design** | Zones and conduits, 802.1X or closed-mode MAB, TrustSec groups and contracts, replayed against observed flows until nothing legitimate breaks. | Holds on real traffic? No: redesign. | [ot-zone-conduit-check](https://github.com/a-ayrapetov/ot-zone-conduit-check), [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) |
-| **4. Prepare the change** | A procedure with pre-checks, commands, verification and rollback; a lockout check; ISE health before the window; a script that stops on the first failed proof. | Lockout and rollback clear? No: hold, fix, check again. | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [Production change by script](playbooks/gated-production-change.md), [The script contract](playbooks/script-contract.md) |
-| **5. Deliver** | One batch at a time (a site, a set of ports or switches); each batch is proven before the next one starts. | Every proof passed? No: roll the batch back and return to step 4. | [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) |
-| **6. Operate and defend** | Drift against the approved state, ISE health and certificate expiry, detection tuned by classifying the hosts behind the alarms. | Any finding? Yes: it becomes a new requirement, back to step 1. No: in service. | [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift), [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map), [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) |
 
 ## Recent field work
 
