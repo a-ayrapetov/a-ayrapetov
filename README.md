@@ -28,13 +28,22 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 
 | Area | In practice |
 |---|---|
-| **OT/ICS security** | Security architecture for a major North American rail transit network: hundreds of stations, about 1,400 switches. About 30 security groups across train control, SCADA, fire alarm, elevators, fare collection and CCTV, mapped to IEC 62443, under the TSA rail security directives (the US counterpart to NIS2 and KRITIS). |
-| **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a campus with broken authentication; 915 endpoints now run EAP-TLS across eight virtual networks. |
+| **OT/ICS security** | Defensive cyber architecture for a large North American public transit operator, across its rail, subway and police networks: about 8,800 core and distribution systems kept under control, and more than 100,000 endpoints scanned every day. About 30 security groups across train control, SCADA, fire alarm, elevators, fare collection and CCTV, mapped to IEC 62443, under the TSA rail security directives (the US counterpart to NIS2 and KRITIS). |
+| **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech company's campus network and made it stable: 915 endpoints on certificate-based EAP-TLS across eight virtual networks. |
 | **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules and tuned them out. |
 | **Automation** | Python AAA hardening on 6,000+ switches. A discovery sweep that found about 5,000 OT assets missing from every inventory. The tools below are the public, generic versions of this kind of work. |
 | **Campus, WAN and data center** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Meraki and SD-WAN migrations, Nexus vPC, Secure Firewall. |
 
 Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Meraki, Nexus, Secure Firewall, Secure Network Analytics, Gigamon, Nozomi, Darktrace, Python with Netmiko, PowerShell.
+
+## How the work fits together
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/how-it-fits-dark.svg">
+  <img alt="Five stages of one defensive cyber capability: assess, develop, deliver, operate, defend, with the tool or playbook used at each stage" src="assets/how-it-fits-light.svg" width="100%">
+</picture>
+
+Read it left to right. Assess, develop and deliver is how a defensive capability gets built. Operate and defend is how it stays useful after handover, and what defend finds starts the next assessment. Dashed boxes are being built now and turn solid when they are published.
 
 ## Recent field work
 
@@ -45,7 +54,7 @@ Anonymized.
 - Showed that held uploads blamed on the network came from a saturated 10G dedicated cloud circuit, using controller interface history cross checked against the carrier's graphs. A larger circuit was approved the same day.
 - Reproduced a controller provisioning fault that emptied the WLAN maps on a Catalyst 9800, under a five second watch with automatic restore.
 - Fixed an EAP-TLS incident (ISE failure 22047) by adding UPN and URI subject alternative names to the MDM's SCEP user certificate profile.
-- Built and run the knowledge base my engagements work from: one Cloudflare Worker, a sealed container per knowledge base, sign in through an allow list, every write versioned, a secret guard on writes, scheduled backups, and a deploy pipeline that smoke tests and rolls back. Every pull request gets an AI review that must quote the code behind each point.
+- Built and run the knowledge base my engagements work from: one Cloudflare Worker, a sealed container per knowledge base, sign in through an allow list, every write versioned, a secret guard on writes, scheduled backups, and a deploy pipeline that smoke tests and rolls back.
 
 ## Which tool, when
 
@@ -72,30 +81,12 @@ pip install git+https://github.com/a-ayrapetov/ios-hardening-audit
 ios-harden configs/*.cfg --csv findings.csv
 ```
 
-## How they fit together
-
-```mermaid
-flowchart LR
-  A([New site or engagement]) --> B[ios-hardening-audit]
-  B --> C[cisco-config-drift<br/>approved baseline]
-  C --> D[ise-health-audit]
-  D --> E{Ticket}
-  E -->|can't connect| F[ise-endpoint-explain]
-  E -->|slow or flapping| G[cisco-interface-health]
-  E -->|"did something change?"| C
-  style A fill:#13392d,color:#fff,stroke:none
-  style E fill:#b7832a,color:#fff,stroke:none
-```
-
-Day one is a hardening audit and a drift baseline. ISE health runs before anything can take authentication down. After that, every "can't connect" goes through ise-endpoint-explain and every "it's slow" through cisco-interface-health.
-
 ## How I work: playbooks
 
 Method notes from the same engagements, with no customer in them.
 
 | Playbook | When to read it |
 |---|---|
-| [AI assistant, human at the keyboard](playbooks/ai-assisted-network-operations.md) | You want an AI assistant on production network work without it guessing or touching a device |
 | [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) | You are closing access ports for devices that cannot do 802.1X |
 | [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) | Your flow analytics platform alarms all day and nobody looks any more |
 | [Production change by script](playbooks/gated-production-change.md) | A change has to reach a production device and the way back must be ready before the first line goes in |

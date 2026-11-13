@@ -12,7 +12,7 @@ Most outages from changes are not bad commands. They are the right command on th
 
 ## Environment
 
-Vendor neutral in method. Used on campus border and access switches and on a wireless controller managed by a campus controller. The engineer runs the script from a jump host; the author is not on the device.
+Vendor neutral in method. Used on campus border and access switches and on a wireless controller managed by a campus controller. The operator runs the script from a jump host; the author is not on the device.
 
 ## What worked
 
@@ -29,7 +29,7 @@ Vendor neutral in method. Used on campus border and access switches and on a wir
 
 1. A named evening, midweek. Dry run again the same day.
 2. `--go` saves a backup first and confirms it exists. No confirmed backup, no push.
-3. The engineer types an exact capital `YES` per section or device. Any other answer skips that section. The instructions state the exact answers to type.
+3. The operator types an exact capital `YES` per section or device. Any other answer skips that section. The instructions state the exact answers to type.
 4. The script verifies after each section. Saving the configuration is its own `YES`, offered only when everything passed.
 5. The rollback is printed and written to the run folder before the push. Rolling back is one answer or one paste.
 
@@ -46,7 +46,7 @@ Some devices do not get automatic changes at all. For those, a guard script wrap
 1. Back up and snapshot the full model, not only the fields being changed.
 2. Refuse to start unless the baseline is healthy.
 3. Read state every few seconds while the controller task runs.
-4. Restore the saved lines automatically only when the guard's own checks fail, and tell the engineer at once.
+4. Restore the saved lines automatically only when the guard's own checks fail, and tell the operator at once.
 5. Keep watching after the task ends, then snapshot, diff and save.
 
 ### Unattended mode

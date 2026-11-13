@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="610" viewBox="0 0 1280 610" role="img" aria-label="How the work fits together: assess, develop, deliver, operate, defend">
+<rect x="0.5" y="0.5" width="1279" height="609" rx="14" fill="#0b231c" stroke="#1e4a3b"/>
+<text x="34" y="54" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#e6f0ea">How the work fits together</text>
+<text x="34" y="82" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#8fbfaa">One defensive cyber capability, from what was asked for to what is watched every day.</text>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7cc7a6"/></marker></defs>
+<rect x="34" y="112" width="226" height="64" rx="9" fill="#2e6f53"/>
+<text x="50" y="140" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1.5">1  ASSESS</text>
+<text x="50" y="162" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#ffffff" opacity="0.85">What is there, what was asked for</text>
+<line x1="263" y1="144.0" x2="279" y2="144.0" stroke="#7cc7a6" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="34" y="192" width="226" height="74" rx="8" fill="#1d2f22" stroke="#d9a441" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="46" y="216" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">requirements-trace</text>
+<text x="46" y="237" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Each requirement traced to</text>
+<text x="46" y="254" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">a design and a passed test</text>
+<rect x="182" y="184" width="64" height="16" rx="8" fill="#0b231c" stroke="#d9a441" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="214.0" y="196" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#d9a441" letter-spacing="0.8">PLANNED</text>
+<rect x="34" y="278" width="226" height="74" rx="8" fill="#1d2f22" stroke="#d9a441" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="46" y="302" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">ot-asset-inventory</text>
+<text x="46" y="323" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Find the devices nobody</text>
+<text x="46" y="340" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">has on a list</text>
+<rect x="182" y="270" width="64" height="16" rx="8" fill="#0b231c" stroke="#d9a441" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="214.0" y="282" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#d9a441" letter-spacing="0.8">PLANNED</text>
+<rect x="34" y="364" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="46" y="388" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">ios-hardening-audit</text>
+<text x="46" y="409" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Hardening gaps per device,</text>
+<text x="46" y="426" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">each with the fix</text>
+<rect x="206" y="356" width="40" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="226.0" y="368" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">TOOL</text>
+<rect x="282" y="112" width="226" height="64" rx="9" fill="#2e6f53"/>
+<text x="298" y="140" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1.5">2  DEVELOP</text>
+<text x="298" y="162" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#ffffff" opacity="0.85">Design the controls</text>
+<line x1="511" y1="144.0" x2="527" y2="144.0" stroke="#7cc7a6" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="282" y="192" width="226" height="74" rx="8" fill="#1d2f22" stroke="#d9a441" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="294" y="216" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">ot-zone-conduit-check</text>
+<text x="294" y="237" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">IEC 62443 zones and conduits</text>
+<text x="294" y="254" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">checked against real traffic</text>
+<rect x="430" y="184" width="64" height="16" rx="8" fill="#0b231c" stroke="#d9a441" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="462.0" y="196" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#d9a441" letter-spacing="0.8">PLANNED</text>
+<rect x="282" y="278" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="294" y="302" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#e6f0ea">Closed-mode MAB rollout</text>
+<text x="294" y="323" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">802.1X and MAB access control,</text>
+<text x="294" y="340" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">one site at a time</text>
+<rect x="438" y="270" width="56" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="466.0" y="282" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">METHOD</text>
+<rect x="530" y="112" width="226" height="64" rx="9" fill="#2e6f53"/>
+<text x="546" y="140" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1.5">3  DELIVER</text>
+<text x="546" y="162" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#ffffff" opacity="0.85">Change it without an outage</text>
+<line x1="759" y1="144.0" x2="775" y2="144.0" stroke="#7cc7a6" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="530" y="192" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="542" y="216" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#e6f0ea">Production change by script</text>
+<text x="542" y="237" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Gates, proof lines and</text>
+<text x="542" y="254" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">the rollback ready first</text>
+<rect x="686" y="184" width="56" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="714.0" y="196" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">METHOD</text>
+<rect x="530" y="278" width="226" height="74" rx="8" fill="#1d2f22" stroke="#d9a441" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="542" y="302" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">aaa-lockout-check</text>
+<text x="542" y="323" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">AAA changes checked before</text>
+<text x="542" y="340" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">they can lock anyone out</text>
+<rect x="678" y="270" width="64" height="16" rx="8" fill="#0b231c" stroke="#d9a441" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="710.0" y="282" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#d9a441" letter-spacing="0.8">PLANNED</text>
+<rect x="778" y="112" width="226" height="64" rx="9" fill="#2e6f53"/>
+<text x="794" y="140" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1.5">4  OPERATE</text>
+<text x="794" y="162" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#ffffff" opacity="0.85">Keep it healthy</text>
+<line x1="1007" y1="144.0" x2="1023" y2="144.0" stroke="#7cc7a6" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="778" y="192" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="790" y="216" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">ise-health-audit</text>
+<text x="790" y="237" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Nodes, admin HA and</text>
+<text x="790" y="254" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">certificate expiry</text>
+<rect x="950" y="184" width="40" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="970.0" y="196" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">TOOL</text>
+<rect x="778" y="278" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="790" y="302" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">ise-endpoint-explain</text>
+<text x="790" y="323" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Why a device got the access</text>
+<text x="790" y="340" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">it got, in plain words</text>
+<rect x="950" y="270" width="40" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="970.0" y="282" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">TOOL</text>
+<rect x="778" y="364" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="790" y="388" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">cisco-interface-health</text>
+<text x="790" y="409" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Ports ranked by urgency,</text>
+<text x="790" y="426" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">with the likely cause</text>
+<rect x="950" y="356" width="40" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="970.0" y="368" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">TOOL</text>
+<rect x="778" y="450" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="790" y="474" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">cisco-config-drift</text>
+<text x="790" y="495" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Changes made outside</text>
+<text x="790" y="512" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">change control</text>
+<rect x="950" y="442" width="40" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="970.0" y="454" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">TOOL</text>
+<rect x="1026" y="112" width="226" height="64" rx="9" fill="#2e6f53"/>
+<text x="1042" y="140" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="1.5">5  DEFEND</text>
+<text x="1042" y="162" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" fill="#ffffff" opacity="0.85">Watch and respond</text>
+<rect x="1026" y="192" width="226" height="74" rx="8" fill="#13392d" stroke="#2f5d4c" stroke-width="1.4"/>
+<text x="1038" y="216" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14.5" font-weight="700" fill="#e6f0ea">NDR alarm noise loop</text>
+<text x="1038" y="237" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Tune detections and prove</text>
+<text x="1038" y="254" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">each step</text>
+<rect x="1182" y="184" width="56" height="16" rx="8" fill="#0b231c" stroke="#2f5d4c" stroke-width="1"/>
+<text x="1210.0" y="196" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#8fbfaa" letter-spacing="0.8">METHOD</text>
+<rect x="1026" y="278" width="226" height="74" rx="8" fill="#1d2f22" stroke="#d9a441" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text x="1038" y="302" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14.5" font-weight="700" fill="#e6f0ea">ndr-alarm-pareto</text>
+<text x="1038" y="323" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">Which rules make most</text>
+<text x="1038" y="340" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">of the alarms</text>
+<rect x="1174" y="270" width="64" height="16" rx="8" fill="#0b231c" stroke="#d9a441" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="1206.0" y="282" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#d9a441" letter-spacing="0.8">PLANNED</text>
+<path d="M1139.0,358 V554 H147.0 V446" fill="none" stroke="#7cc7a6" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round" marker-end="url(#ah)"/>
+<rect x="473.0" y="541" width="340" height="26" rx="13" fill="#0b231c"/>
+<text x="643.0" y="559" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e6f0ea">What DEFEND finds becomes the next ASSESS</text>
+<text x="34" y="586" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12.5" fill="#8fbfaa">TOOL: code in its own repository, tested in CI  ·  METHOD: a written playbook in this profile  ·  Dashed: planned, not published yet</text>
+</svg>
