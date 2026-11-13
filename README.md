@@ -22,7 +22,7 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 
 **Hiring?** [What I do](#what-i-do) · [Recent field work](#recent-field-work) · [Contact](#contact)
 &nbsp;&nbsp;|&nbsp;&nbsp;
-**Engineer?** [Which tool, when](#which-tool-when) · [Try one in sixty seconds](#try-one-in-sixty-seconds-no-network-required) · [Playbooks](#how-i-work-playbooks)
+**Hands-on?** [Which tool, when](#which-tool-when) · [Try one in sixty seconds](#try-one-in-sixty-seconds-no-network-required) · [Playbooks](#how-i-work-playbooks)
 
 ## What I do
 
@@ -137,5 +137,5 @@ New tools start from [repo-template](https://github.com/a-ayrapetov/repo-templat
 
 ## Contact
 
-Open to architect and senior engineer roles in network and OT security, in Germany, across Europe and in the US, and to consulting work.
+Open to architect roles in network and OT security, in Germany, across Europe and in the US, and to consulting work.
 Email [arkadiy@ayrapetov.co](mailto:arkadiy@ayrapetov.co) · [LinkedIn](https://www.linkedin.com/in/arkadiy-ayrapetov-nyc/) · field notes on network and OT security at [a-ayrapetov.github.io](https://a-ayrapetov.github.io)
