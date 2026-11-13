@@ -1,5 +1,15 @@
-<h1 align="center">Arkadiy Ayrapetov</h1>
-<p align="center"><b>Cyber Security Architect</b> &nbsp;·&nbsp; Cisco ISE, TrustSec, SD-Access, Catalyst Center &nbsp;·&nbsp; OT and regulated environments &nbsp;·&nbsp; CCNP Enterprise</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img alt="Arkadiy Ayrapetov, Cybersecurity Architect. OT/ICS, Zero Trust, Cisco ISE, TrustSec, SD-Access, Catalyst Center" src="assets/banner-light.svg" width="100%">
+</picture>
+
+<p align="center">CCNP Enterprise, Architecture and Design &nbsp;·&nbsp; CySA+ &nbsp;·&nbsp; Security+ &nbsp;·&nbsp; based in New York &nbsp;·&nbsp; open to roles in Germany, across Europe and in the US</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/arkadiy-ayrapetov-nyc/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-arkadiy--ayrapetov--nyc-0A66C2"></a>
+  <a href="mailto:arkadiy@ayrapetov.co"><img alt="Email" src="https://img.shields.io/badge/email-arkadiy%40ayrapetov.co-2f5d4c"></a>
+  <a href="https://a-ayrapetov.github.io"><img alt="Field notes" src="https://img.shields.io/badge/field%20notes-a--ayrapetov.github.io-2f5d4c"></a>
+</p>
 
 <p align="center">
   <img alt="Read-only by default" src="https://img.shields.io/badge/tools-read--only%20by%20default-2ea44f">
@@ -8,7 +18,43 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey">
 </p>
 
-Fourteen years of making network access control and segmentation actually hold in production: 802.1X and MAB rollouts, TrustSec policy, ISE at scale, campus fabrics, and industrial networks where availability comes first. The tools here are the ones I reach for on real engagements, rewritten so they carry no customer and anyone can run them.
+Fourteen years securing enterprise and industrial networks. I scope, design, build, automate and document, and I am strongest where security, network and automation meet. Everything public here is rewritten from scratch and carries no customer data.
+
+**Hiring?** [What I do](#what-i-do) · [Recent field work](#recent-field-work) · [Contact](#contact)
+&nbsp;&nbsp;|&nbsp;&nbsp;
+**Hands-on?** [Which tool, when](#which-tool-when) · [Try one in sixty seconds](#try-one-in-sixty-seconds-no-network-required) · [Playbooks](#how-i-work-playbooks)
+
+## What I do
+
+| Area | In practice |
+|---|---|
+| **OT/ICS security** | Defensive cyber architecture for a large North American public transit operator, across its rail, subway and police networks: about 8,800 core and distribution systems kept under control, and more than 100,000 endpoints scanned every day. About 30 security groups across train control, SCADA, fire alarm, elevators, fare collection and CCTV, mapped to IEC 62443, under the TSA rail security directives (the US counterpart to NIS2 and KRITIS). |
+| **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech company's campus network and made it stable: 915 endpoints on certificate-based EAP-TLS across eight virtual networks. |
+| **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules and tuned them out. |
+| **Automation** | Python AAA hardening on 6,000+ switches. A discovery sweep that found about 5,000 OT assets missing from every inventory. The tools below are the public, generic versions of this kind of work. |
+| **Campus, WAN and data center** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Meraki and SD-WAN migrations, Nexus vPC, Secure Firewall. |
+
+Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Meraki, Nexus, Secure Firewall, Secure Network Analytics, Gigamon, Nozomi, Darktrace, Python with Netmiko, PowerShell.
+
+## How the work fits together
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/how-it-fits-dark.svg">
+  <img alt="Five stages of one defensive cyber capability: assess, develop, deliver, operate, defend, with the tool or playbook used at each stage" src="assets/how-it-fits-light.svg" width="100%">
+</picture>
+
+Read it left to right. Assess, develop and deliver is how a defensive capability gets built. Operate and defend is how it stays useful after handover, and what defend finds starts the next assessment. Dashed boxes are being built now and turn solid when they are published.
+
+## Recent field work
+
+Anonymized.
+
+- Moved 25 security groups and 9 contracts from ISE to Catalyst Center Group-Based Access Control with zero failures.
+- Upgraded a Catalyst Center cluster within 2.3.7, then to 3.2.3 in an overnight run that finished just after midnight.
+- Showed that held uploads blamed on the network came from a saturated 10G dedicated cloud circuit, using controller interface history cross checked against the carrier's graphs. A larger circuit was approved the same day.
+- Reproduced a controller provisioning fault that emptied the WLAN maps on a Catalyst 9800, under a five second watch with automatic restore.
+- Fixed an EAP-TLS incident (ISE failure 22047) by adding UPN and URI subject alternative names to the MDM's SCEP user certificate profile.
+- Built and run the knowledge base my engagements work from: one Cloudflare Worker, a sealed container per knowledge base, sign in through an allow list, every write versioned, a secret guard on writes, scheduled backups, and a deploy pipeline that smoke tests and rolls back.
 
 ## Which tool, when
 
@@ -27,32 +73,30 @@ Two of the tools work entirely offline on text you already have.
 
 ```bash
 # Paste "show interfaces" output from one switch or fifty; get the ports that need attention, ranked
-pip install cisco-interface-health
+pip install git+https://github.com/a-ayrapetov/cisco-interface-health
 ifhealth show_interfaces.txt
 
 # Point it at a folder of running-configs; get every hardening gap with the fix
-pip install ios-hardening-audit
+pip install git+https://github.com/a-ayrapetov/ios-hardening-audit
 ios-harden configs/*.cfg --csv findings.csv
 ```
 
-## How they fit together
+## How I work: playbooks
 
-```mermaid
-flowchart LR
-  A([New site or engagement]) --> B[ios-hardening-audit]
-  B --> C[cisco-config-drift<br/>approved baseline]
-  C --> D[ise-health-audit]
-  D --> E{Ticket}
-  E -->|can't connect| F[ise-endpoint-explain]
-  E -->|slow or flapping| G[cisco-interface-health]
-  E -->|"did something change?"| C
-  style A fill:#1f6feb,color:#fff,stroke:none
-  style E fill:#6e40c9,color:#fff,stroke:none
-```
+Method notes from the same engagements, with no customer in them.
 
-Day one is a hardening audit and a drift baseline. ISE health runs before anything can take authentication down. After that, every "can't connect" goes through ise-endpoint-explain and every "it's slow" through cisco-interface-health.
+| Playbook | When to read it |
+|---|---|
+| [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) | You are closing access ports for devices that cannot do 802.1X |
+| [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) | Your flow analytics platform alarms all day and nobody looks any more |
+| [Production change by script](playbooks/gated-production-change.md) | A change has to reach a production device and the way back must be ready before the first line goes in |
+| [The script contract](playbooks/script-contract.md) | You write automation that someone else runs on a host you cannot reach |
+| [Two sources and a proof](playbooks/two-sources-and-a-proof.md) | Someone asks "how much", "where" or "who" about a network and the answer will drive a decision |
 
-## Build status
+The gates and proofs those two describe are code: [netops_gates_and_proofs.py](playbooks/templates/netops_gates_and_proofs.py), standard library only, 35 tests.
+
+<details>
+<summary><b>Build status</b></summary>
 
 | Tool | CI | Language |
 |---|---|---|
@@ -63,33 +107,10 @@ Day one is a hardening audit and a drift baseline. ISE health runs before anythi
 | ios-hardening-audit | [![ci](https://github.com/a-ayrapetov/ios-hardening-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/ios-hardening-audit/actions) | Python |
 | win-security-posture-audit | [![ci](https://github.com/a-ayrapetov/win-security-posture-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/a-ayrapetov/win-security-posture-audit/actions) | PowerShell |
 
-## How I work: playbooks
+</details>
 
-Method notes from the same engagements, with no customer in them.
-
-| Playbook | When to read it |
-|---|---|
-| [AI assistant, human at the keyboard](playbooks/ai-assisted-network-operations.md) | You want an AI assistant on production network work without it guessing or touching a device |
-| [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) | You are closing access ports for devices that cannot do 802.1X |
-| [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) | Your flow analytics platform alarms all day and nobody looks any more |
-| [Production change by script](playbooks/gated-production-change.md) | A change has to reach a production device and the way back must be ready before the first line goes in |
-| [The script contract](playbooks/script-contract.md) | You write automation that someone else runs on a host you cannot reach |
-| [Two sources and a proof](playbooks/two-sources-and-a-proof.md) | Someone asks "how much", "where" or "who" about a network and the answer will drive a decision |
-
-The gates and proofs those two describe are code: [netops_gates_and_proofs.py](playbooks/templates/netops_gates_and_proofs.py), standard library only, 35 tests.
-
-## Recent field work
-
-Anonymized.
-
-- Moved 25 security groups and 9 contracts from ISE to Catalyst Center Group-Based Access Control with zero failures.
-- Upgraded a Catalyst Center cluster within 2.3.7, then to 3.2.3 in an overnight run that finished just after midnight.
-- Showed that held uploads blamed on the network came from a saturated 10G dedicated cloud circuit, using controller interface history cross checked against the carrier's graphs. A larger circuit was approved the same day.
-- Reproduced a controller provisioning fault that emptied the WLAN maps on a Catalyst 9800, under a five second watch with automatic restore.
-- Fixed an EAP-TLS incident (ISE failure 22047) by adding UPN and URI subject alternative names to the MDM's SCEP user certificate profile.
-- Built and run the knowledge base my engagements work from: one Cloudflare Worker, a sealed container per knowledge base, sign in through an allow list, every write versioned, a secret guard on writes, scheduled backups, and a deploy pipeline that smoke tests and rolls back.
-
-## Rules every tool follows
+<details>
+<summary><b>Rules every tool follows</b></summary>
 
 **Read-only by default.** Show commands and GET calls. Nothing is pushed to a device unless the README says so in its first line.
 
@@ -101,8 +122,11 @@ Anonymized.
 
 **Evidence over opinion.** Each tool prints the lines that prove its own result, so the output can go straight into a change record.
 
-## Writing and contact
-
-Field notes on network and OT security: [a-ayrapetov.github.io](https://a-ayrapetov.github.io). Contact: arkadiy@ayrapetov.co.
-
 New tools start from [repo-template](https://github.com/a-ayrapetov/repo-template) and land here once they pass review.
+
+</details>
+
+## Contact
+
+Open to architect roles in network and OT security, in Germany, across Europe and in the US, and to consulting work.
+Email [arkadiy@ayrapetov.co](mailto:arkadiy@ayrapetov.co) · [LinkedIn](https://www.linkedin.com/in/arkadiy-ayrapetov-nyc/) · field notes on network and OT security at [a-ayrapetov.github.io](https://a-ayrapetov.github.io)
