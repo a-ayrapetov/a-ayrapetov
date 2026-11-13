@@ -1,6 +1,8 @@
-# Production Change By Script: Gates, Backup, Verify, Rollback
+# Production change by script: gates, backup, verify, rollback
 
 How I push a change to a production network device so that the script cannot send a line nobody approved, and the way back is ready before the first line goes in.
+
+This builds on the change gates in [The script contract](script-contract.md) and covers what goes around them: state gates, a plan the script cannot exceed, the window, the rerun and the guard for devices that get no automatic changes.
 
 ## Problem
 
@@ -12,9 +14,9 @@ Most outages from changes are not bad commands. They are the right command on th
 
 Vendor neutral in method. Used on campus border and access switches and on a wireless controller managed by a campus controller. The engineer runs the script from a jump host; the author is not on the device.
 
-## What Worked
+## What worked
 
-### Before The Window
+### Before the window
 
 1. Checks first, then fixes, then messages. A read-only check script runs before any change is designed.
 2. The plan document lists the exact lines, the verification, the rollback and what else depends on the thing being changed (for example, which routes a new subnet needs upstream).
@@ -23,7 +25,7 @@ Vendor neutral in method. Used on campus border and access switches and on a wir
 5. Dry run is the default mode and ends with `DRY RUN: nothing was changed.` The author reads the dry-run folder and compares PLAN to plan, line for line.
 6. Pre-built standby config is audited against its live twin before it is switched on. "Configured" is not "ready".
 
-### In The Window
+### In the window
 
 1. A named evening, midweek. Dry run again the same day.
 2. `--go` saves a backup first and confirms it exists. No confirmed backup, no push.
@@ -37,7 +39,7 @@ Vendor neutral in method. Used on campus border and access switches and on a wir
 2. Verify service, not the tool's status: clients connected, sessions established, traffic moving on the path that was changed.
 3. Record the same day: what was applied, the run folder, the verify line, who was told.
 
-### Guarded Devices
+### Guarded devices
 
 Some devices do not get automatic changes at all. For those, a guard script wraps the risky step:
 
@@ -47,11 +49,11 @@ Some devices do not get automatic changes at all. For those, a guard script wrap
 4. Restore the saved lines automatically only when the guard's own checks fail, and tell the engineer at once.
 5. Keep watching after the task ends, then snapshot, diff and save.
 
-### Unattended Mode
+### Unattended mode
 
 Only diffs on a short allowlist, built from evidence and reviewed by a person, are accepted without a prompt. Everything else lands on a "needs a person" list.
 
-### Fleet Changes
+### Fleet changes
 
 Never one shot. One canary, verify, then batches. Core devices get their own window.
 
