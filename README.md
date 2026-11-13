@@ -1,7 +1,9 @@
+<p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-v4-dark.svg">
-  <img alt="Arkadiy Ayrapetov, Cybersecurity Architect. OT/ICS, Zero Trust, Cisco ISE, TrustSec, SD-Access, Catalyst Center" src="assets/banner-v4-light.svg" width="100%">
+  <img alt="Arkadiy Ayrapetov, Cybersecurity Architect. OT/ICS, Zero Trust, Cisco ISE, TrustSec, SD-Access, Catalyst Center" src="assets/banner-v4-light.svg" width="70%">
 </picture>
+</p>
 
 <p align="center">CCNP Enterprise, Architecture and Design &nbsp;·&nbsp; CySA+ &nbsp;·&nbsp; Security+ &nbsp;·&nbsp; based in New York &nbsp;·&nbsp; open to roles in Germany, across Europe and in the US</p>
 
