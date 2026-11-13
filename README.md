@@ -38,12 +38,46 @@ Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Merak
 
 ## How the work fits together
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/how-it-fits-dark.svg">
-  <img alt="Five stages of one defensive cyber capability: assess, develop, deliver, operate, defend, with the tool or playbook used at each stage" src="assets/how-it-fits-light.svg" width="100%">
-</picture>
+```mermaid
+flowchart TB
+  A([Requirement or new site]) --> S1
 
-Read it left to right. Assess, develop and deliver is how a defensive capability gets built. Operate and defend is how it stays useful after handover, and what defend finds starts the next assessment. Dashed boxes are being built now and turn solid when they are published.
+  subgraph S1 [Assess: what is there and what was asked for]
+    direction LR
+    a1[requirements-trace] ~~~ a2[ot-asset-inventory] ~~~ a3[ios-hardening-audit]
+  end
+
+  subgraph S2 [Develop: design the controls]
+    direction LR
+    d1[ot-zone-conduit-check] ~~~ d2(closed-mode MAB rollout)
+  end
+
+  subgraph S3 [Deliver: change it without an outage]
+    direction LR
+    v1(production change by script) ~~~ v2[aaa-lockout-check]
+  end
+
+  subgraph S4 [Operate: keep it healthy]
+    direction LR
+    o1[ise-health-audit] ~~~ o2[ise-endpoint-explain] ~~~ o3[cisco-interface-health] ~~~ o4[cisco-config-drift]
+  end
+
+  subgraph S5 [Defend: watch and respond]
+    direction LR
+    f1(NDR alarm noise loop) ~~~ f2[ndr-coverage-map]
+  end
+
+  S1 --> S2 --> S3 --> S4 --> S5 --> E{Finding}
+  E -->|starts| N([Next assessment])
+
+  style A fill:#1f6feb,color:#fff,stroke:none
+  style E fill:#6e40c9,color:#fff,stroke:none
+  style N fill:#1f6feb,color:#fff,stroke:none
+  classDef planned stroke-dasharray:5 5
+  class a1,d1,f2 planned
+```
+
+Read it top to bottom. Assess, develop and deliver is how a defensive capability gets built. Operate and defend keep it useful after handover, and every finding starts the next assessment. Square boxes are tools, rounded boxes are playbooks, dashed boxes are being built now and turn solid when they are published.
 
 ## Recent field work
 
