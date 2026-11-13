@@ -22,18 +22,18 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 
 **Hiring?** [What I do](#what-i-do) · [Recent field work](#recent-field-work) · [Field notes](#field-notes) · [Contact](#contact)
 &nbsp;&nbsp;|&nbsp;&nbsp;
-**Hands-on?** [Which tool, when](#which-tool-when) · [Try one in sixty seconds](#try-one-in-sixty-seconds-no-network-required) · [Playbooks](#how-i-work-playbooks)
+**Hands-on?** [IT to OT](#where-i-work-it-to-ot-level-by-level) · [Battle drill](#battle-drill-every-change-every-window) · [Which tool, when](#which-tool-when) · [Try one in sixty seconds](#try-one-in-sixty-seconds-no-network-required) · [Playbooks](#how-i-work-playbooks)
 
 ## What I do
 
-| Area | In practice |
+| Role | What it looked like |
 |---|---|
-| **OT/ICS security** | Security architecture for the operational networks of a large US transit agency: identity, segmentation and detection across train control, SCADA, fire alarm, elevators, fare collection and CCTV, with security groups mapped to IEC 62443 under the TSA rail security directives. |
-| **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech company's campus network and made it stable: 915 endpoints on certificate-based EAP-TLS across eight virtual networks. |
-| **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules, then worked them down by classifying the hosts behind them instead of switching rules off. |
-| **Automation** | Python AAA hardening on 6,000+ switches. Asset discovery that found thousands of OT devices missing from every inventory. The tools below are the public, generic versions of this kind of work. |
-| **Networks and telecommunications** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Nexus vPC, Secure Firewall. Moved a state agency's 17 sites to SD-WAN, dual stack, with BGP to Azure. Leading a county's phone system refresh: Unified Communications Manager and Unity 11.5 to 15, 9 PRI circuits moving to SIP on two CUBE gateways. BGP over AWS Direct Connect for a genomics company's lab data. |
-| **Requirements and planning** | Requirements turned into controls and evidence. Level of effort, statements of work and bills of material checked before the order. Phased plans with a decision point and a rollback at every step, such as a data center switch replacement under a live vSAN stretch cluster, moved three server links at a time so no server ever drops. |
+| **OT/ICS security architect** | Security architecture for the operational networks of a large US transit agency: identity, segmentation and detection across train control, SCADA, fire alarm, elevators, fare collection and CCTV. Security groups mapped to IEC 62443 zones under the TSA rail security directives. |
+| **Identity and Zero Trust lead** | Cisco ISE 3.x design, upgrades and recovery, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech campus with broken authentication and stabilized it: 915 endpoints on certificate-based EAP-TLS across eight virtual networks. |
+| **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service impact. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules, then worked them down host by host instead of switching rules off. |
+| **Automation at scale** | Python AAA hardening pushed to 6,000+ switches. Passive asset discovery that found thousands of OT devices missing from every inventory. The tools below are the public versions of this work. |
+| **Networks and voice** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Nexus vPC, Secure Firewall. Moved a state agency's 17 sites to SD-WAN, dual stack, with BGP to Azure. Leading a county's phone system refresh: Unified Communications Manager and Unity 11.5 to 15, nine PRI circuits moving to SIP on two CUBE gateways. BGP over AWS Direct Connect for a genomics lab. |
+| **Planning and delivery** | Requirements turned into controls and evidence. Level of effort, statements of work and bills of material checked before the order. Phased plans with a decision point and a rollback at every step, such as a data center switch replacement under a live vSAN stretch cluster, moved three server links at a time so no server ever lost its path. |
 
 Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Meraki, Nexus, Secure Firewall, Secure Network Analytics, Gigamon, Nozomi, Darktrace, Python with Netmiko, PowerShell.
 
@@ -70,38 +70,36 @@ flowchart LR
 | 2, supervisory | Closed-mode MAB for devices that cannot run 802.1X, AAA hardening, asset discovery | [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit) |
 | 1 and 0, control and field | Safety systems stay agentless; passive TAPs, data diode out | [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map) |
 
-## How the work fits together
+## Battle drill: every change, every window
 
-Every engagement runs on the same six steps. Each step ends at a gate, and the work moves on only when the gate's answer is yes. A no sends it back along the red line to the step named on it, so nothing reaches production on hope.
-
-<p align="center"><a href="https://a-ayrapetov.github.io/workflow/"><b>Open the full-screen version</b></a>: walk it step by step, see the proof each step leaves behind, and follow two worked examples.</p>
+The Purdue chart above shows **where** the work happens. This shows **how**: the six steps every change goes through, from the order to the objective held. Each step ends with a go/no-go check, and a no-go sends the work back along the red line. [Open the interactive version](https://a-ayrapetov.github.io/workflow/) to walk it step by step with two worked examples.
 
 <a href="https://a-ayrapetov.github.io/workflow/">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/workflow-dark.svg">
-  <img alt="Six steps from requirement to in service. Each step ends at a gate; a failed gate goes back along the red line to the step named on it." src="assets/workflow-light.svg" width="100%">
+  <img alt="Six-step battle drill: orders, recon, plan, rehearse, execute, hold the ground. Each step ends with a go/no-go check; a no-go goes back along the red line to the step named on it." src="assets/workflow-light.svg" width="100%">
 </picture>
 </a>
 
-| Step | What happens | Gate to move on | Tools and playbooks |
+| Step | What happens | Go/no-go check | Tools and playbooks |
 |---|---|---|---|
-| **1. Requirement** | The ask (a directive, an audit finding, an incident, a client request) becomes a control with a scope and a pass condition. | None: straight to step 2. | requirements-trace (being built), [Two sources and a proof](playbooks/two-sources-and-a-proof.md) |
-| **2. Assess** | Endpoints per switch port from offline show output, every running-config baselined and audited, gaps listed per zone. | Assets and gaps known? No: keep assessing. | [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) |
-| **3. Design** | Zones and conduits, 802.1X or closed-mode MAB, TrustSec groups and contracts, replayed against observed flows until nothing legitimate breaks. | Holds on real traffic? No: redesign. | [ot-zone-conduit-check](https://github.com/a-ayrapetov/ot-zone-conduit-check), [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) |
-| **4. Prepare the change** | A procedure with pre-checks, commands, verification and rollback; a lockout check; ISE health before the window; a script that stops on the first failed proof. | Lockout and rollback clear? No: hold, fix, check again. | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [Production change by script](playbooks/gated-production-change.md), [The script contract](playbooks/script-contract.md) |
-| **5. Deliver** | One batch at a time (a site, a set of ports or switches); each batch is proven before the next one starts. | Every proof passed? No: roll the batch back and return to step 4. | [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) |
-| **6. Operate and defend** | Drift against the approved state, ISE health and certificate expiry, detection tuned by classifying the hosts behind the alarms. | Any finding? Yes: it becomes a new requirement, back to step 1. No: in service. | [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift), [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map), [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) |
+| **1. Orders** | The directive, audit finding or incident becomes a control with a scope and a pass test. | None, straight to recon. | [Two sources and a proof](playbooks/two-sources-and-a-proof.md) |
+| **2. Recon** | Endpoints per switch port from offline show output, every running-config baselined and audited, gaps listed by zone. Nothing is sent to the OT devices. | Ground known? No-go: keep recon. | [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) |
+| **3. Plan** | Zones and conduits, 802.1X or closed-mode MAB, TrustSec groups and contracts, checked against observed flows until nothing legitimate breaks. | Plan survives real traffic? No-go: re-plan. | [ot-zone-conduit-check](https://github.com/a-ayrapetov/ot-zone-conduit-check), [Closed-mode MAB, one site at a time](playbooks/closed-mode-mab-site-rollout.md) |
+| **4. Rehearse** | Written procedure with pre-checks, commands, verification and rollback; lockout check; ISE health before the window; a script that stops at the first failed check. | Lockout and rollback clear? No-go: hold, fix, rehearse again. | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [Production change by script](playbooks/gated-production-change.md), [The script contract](playbooks/script-contract.md) |
+| **5. Execute** | One site, or one batch of ports or switches, at a time; each proven before the next moves. | Every check passed? No-go: roll back the batch, back to step 4. | [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift) |
+| **6. Hold the ground** | Drift against the approved state, ISE health and certificate expiry, detection tuned host by host. | Anything new found? Yes: new orders, back to step 1. No: objective held. | [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift), [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [ndr-coverage-map](https://github.com/a-ayrapetov/ndr-coverage-map), [NDR alarm noise reduction loop](playbooks/ndr-alarm-noise-reduction-loop.md) |
 
 ## Recent field work
 
 Anonymized.
 
 - Moved 25 security groups and 9 contracts from ISE to Catalyst Center Group-Based Access Control with zero failures.
-- Upgraded a Catalyst Center cluster within 2.3.7, then to 3.2.3 in an overnight run that finished just after midnight.
-- Showed that held uploads blamed on the network came from a saturated 10G dedicated cloud circuit, using controller interface history cross checked against the carrier's graphs. A larger circuit was approved the same day.
-- Reproduced a controller provisioning fault that emptied the WLAN maps on a Catalyst 9800, under a five second watch with automatic restore.
+- Upgraded a Catalyst Center cluster through 2.3.7 and on to 3.2.3 in one overnight window.
+- Proved that stalled uploads blamed on the network came from a saturated 10G cloud circuit, by matching controller interface history against the carrier's graphs. A larger circuit was approved the same day.
+- Reproduced a controller provisioning fault that wiped the WLAN mappings on a Catalyst 9800, under a five-second watch with automatic restore.
 - Fixed an EAP-TLS incident (ISE failure 22047) by adding UPN and URI subject alternative names to the MDM's SCEP user certificate profile.
-- Built and run the knowledge base my engagements work from: one Cloudflare Worker, a sealed container per knowledge base, sign in through an allow list, every write versioned, a secret guard on writes, scheduled backups, and a deploy pipeline that smoke tests and rolls back.
+- Built and run the knowledge base every engagement works from: one Cloudflare Worker, a sealed container per knowledge base, sign in through an allow list, every write versioned, a secret guard on writes, scheduled backups, and a deploy pipeline that smoke tests and rolls back.
 
 ## Which tool, when
 
@@ -118,7 +116,7 @@ Anonymized.
 
 ## Try one in sixty seconds, no network required
 
-Four of the tools work entirely offline on text you already have. Three of them:
+Four of the tools run entirely offline on text you already have. Three of them:
 
 ```bash
 # Paste "show interfaces" output from one switch or fifty; get the ports that need attention, ranked
@@ -136,7 +134,7 @@ aaa-lockout-check "configs/*.cfg"
 
 ## How I work: playbooks
 
-Method notes from the same engagements, with no customer in them.
+How the work is run, written from the same engagements with no customer in them.
 
 | Playbook | When to read it |
 |---|---|
@@ -146,7 +144,7 @@ Method notes from the same engagements, with no customer in them.
 | [The script contract](playbooks/script-contract.md) | You write automation that someone else runs on a host you cannot reach |
 | [Two sources and a proof](playbooks/two-sources-and-a-proof.md) | Someone asks "how much", "where" or "who" about a network and the answer will drive a decision |
 
-The gates and proofs those two describe are code: [netops_gates_and_proofs.py](playbooks/templates/netops_gates_and_proofs.py), standard library only, 35 tests.
+The checks in the change-by-script and script-contract playbooks are also code: [netops_gates_and_proofs.py](playbooks/templates/netops_gates_and_proofs.py), standard library only, 35 tests.
 
 <details>
 <summary><b>Build status</b></summary>

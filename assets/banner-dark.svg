@@ -1,36 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="240" viewBox="0 0 1280 240" role="img" aria-label="Arkadiy Ayrapetov, Cybersecurity Architect">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b231c"/>
-      <stop offset="1" stop-color="#13392d"/>
-    </linearGradient>
-  </defs>
-  <rect x="0.5" y="0.5" width="1279" height="239" rx="14" fill="url(#bg)" stroke="#1e4a3b"/>
-  <g fill="none" stroke="#4f9d7f" stroke-width="1.5">
-    <rect x="822" y="44" width="128" height="156" rx="10"/>
-    <rect x="978" y="44" width="128" height="156" rx="10" stroke="#d9a441" stroke-dasharray="7 5"/>
-    <rect x="1134" y="44" width="104" height="156" rx="10"/>
-  </g>
-  <g stroke="#7cc7a6" stroke-width="1.6" stroke-linecap="round">
-    <line x1="860" y1="82" x2="910" y2="122"/>
-    <line x1="860" y1="166" x2="910" y2="122"/>
-    <line x1="910" y1="122" x2="1018" y2="90"/>
-    <line x1="1018" y1="90" x2="1066" y2="140"/>
-    <line x1="1018" y1="172" x2="1066" y2="140"/>
-    <line x1="1066" y1="140" x2="1186" y2="100"/>
-    <line x1="1066" y1="140" x2="1186" y2="160"/>
-  </g>
-  <g fill="#a8e0c6">
-    <circle cx="860" cy="82" r="7"/>
-    <circle cx="910" cy="122" r="7"/>
-    <circle cx="860" cy="166" r="7"/>
-    <circle cx="1018" cy="90" r="7"/>
-    <circle cx="1066" cy="140" r="7"/>
-    <circle cx="1018" cy="172" r="7"/>
-    <circle cx="1186" cy="100" r="7"/>
-    <circle cx="1186" cy="160" r="7"/>
-  </g>
-  <text x="56" y="106" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">Arkadiy Ayrapetov</text>
-  <text x="58" y="148" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="23" fill="#cfe9dd">Cybersecurity Architect  ·  OT/ICS  ·  Zero Trust</text>
-  <text x="58" y="186" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" fill="#8fbfaa">Cisco ISE  ·  TrustSec  ·  SD-Access  ·  Catalyst Center  ·  14 years in the field</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="330" viewBox="0 0 1280 330" role="img" aria-label="Arkadiy Ayrapetov, Cybersecurity Architect, OT/ICS security. Diagram: industrial network layers from enterprise IT down to field devices, firewall and TrustSec enforcement between zones, passive TAP and NDR monitoring.">
+<defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#15342a" stroke-width="1"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071711"/><stop offset="1" stop-color="#0e271f"/></linearGradient></defs>
+<rect x="0.5" y="0.5" width="1279" height="329" rx="10" fill="url(#bg)" stroke="#1e4a3b"/>
+<rect x="0.5" y="0.5" width="1279" height="329" rx="10" fill="url(#g)" opacity="0.55"/>
+<path d="M14,32 V14 H32" fill="none" stroke="#5fd3a3" stroke-width="1.5" opacity="0.7"/>
+<path d="M1266,32 V14 H1248" fill="none" stroke="#5fd3a3" stroke-width="1.5" opacity="0.7"/>
+<path d="M14,298 V316 H32" fill="none" stroke="#5fd3a3" stroke-width="1.5" opacity="0.7"/>
+<path d="M1266,298 V316 H1248" fill="none" stroke="#5fd3a3" stroke-width="1.5" opacity="0.7"/>
+<text x="52" y="74" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3" fill="#5fd3a3">CRITICAL INFRASTRUCTURE  ·  OT/ICS  ·  ZERO TRUST</text>
+<text x="48" y="140" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="50" font-weight="700" fill="#ffffff">Arkadiy Ayrapetov</text>
+<rect x="52" y="157" width="5" height="24" fill="#e3a83b"/>
+<text x="68" y="179" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="25" fill="#d6efe4">Cybersecurity Architect</text>
+<text x="52" y="218" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" fill="#93c4ae">Network access control, segmentation and detection for industrial networks</text>
+<line x1="52" y1="240" x2="640" y2="240" stroke="#2c5848" stroke-width="1"/>
+<text x="52" y="266" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="14.5" fill="#5fd3a3">IEC 62443  ·  NIST 800-82  ·  TSA security directives  ·  14 years in the field</text>
+<rect x="742" y="24" width="396" height="50" rx="5" fill="#0f231c" stroke="#2c5848" stroke-width="1.5"/>
+<path d="M747,24 H812 V74 H747 a5,5 0 0 1 -5,-5 V29 a5,5 0 0 1 5,-5 z" fill="#2c5848"/>
+<text x="777.0" y="56.0" text-anchor="middle" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" fill="#ffffff">L4-5</text>
+<text x="826" y="47" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff">Enterprise IT</text>
+<text x="826" y="66" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#93c4ae">corp network, cloud, email</text>
+<rect x="742" y="84" width="396" height="50" rx="5" fill="#0f231c" stroke="#2c5848" stroke-width="1.5"/>
+<path d="M747,84 H812 V134 H747 a5,5 0 0 1 -5,-5 V89 a5,5 0 0 1 5,-5 z" fill="#2c5848"/>
+<text x="777.0" y="116.0" text-anchor="middle" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" fill="#ffffff">L3.5</text>
+<text x="826" y="107" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff">Industrial DMZ</text>
+<text x="826" y="126" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#93c4ae">jump hosts, patch, historian copy</text>
+<rect x="742" y="144" width="396" height="50" rx="5" fill="#123128" stroke="#3f8a6a" stroke-width="1.5"/>
+<path d="M747,144 H812 V194 H747 a5,5 0 0 1 -5,-5 V149 a5,5 0 0 1 5,-5 z" fill="#3f8a6a"/>
+<text x="777.0" y="176.0" text-anchor="middle" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" fill="#ffffff">L3</text>
+<text x="826" y="167" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff">Site operations</text>
+<text x="826" y="186" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#93c4ae">historian, engineering stations</text>
+<rect x="742" y="204" width="396" height="50" rx="5" fill="#123128" stroke="#3f8a6a" stroke-width="1.5"/>
+<path d="M747,204 H812 V254 H747 a5,5 0 0 1 -5,-5 V209 a5,5 0 0 1 5,-5 z" fill="#3f8a6a"/>
+<text x="777.0" y="236.0" text-anchor="middle" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" fill="#ffffff">L2</text>
+<text x="826" y="227" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff">Control</text>
+<text x="826" y="246" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#93c4ae">HMI and SCADA servers</text>
+<rect x="742" y="264" width="396" height="50" rx="5" fill="#123128" stroke="#3f8a6a" stroke-width="1.5"/>
+<path d="M747,264 H812 V314 H747 a5,5 0 0 1 -5,-5 V269 a5,5 0 0 1 5,-5 z" fill="#3f8a6a"/>
+<text x="777.0" y="296.0" text-anchor="middle" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" fill="#ffffff">L0-1</text>
+<text x="826" y="287" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff">Field</text>
+<text x="826" y="306" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#93c4ae">PLCs, RTUs, I/O, drives</text>
+<line x1="734" y1="79.0" x2="1152" y2="79.0" stroke="#e3a83b" stroke-width="2.5" stroke-dasharray="8 4"/>
+<path d="M1156,69.0 l10,-5 l10,5 v7 c0,7 -5,11 -10,13 c-5,-2 -10,-6 -10,-13 z" fill="#e3a83b"/>
+<text x="1182" y="85.0" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#e3a83b">firewall</text>
+<line x1="734" y1="139.0" x2="1152" y2="139.0" stroke="#e3a83b" stroke-width="2.5" stroke-dasharray="8 4"/>
+<path d="M1156,129.0 l10,-5 l10,5 v7 c0,7 -5,11 -10,13 c-5,-2 -10,-6 -10,-13 z" fill="#e3a83b"/>
+<text x="1182" y="145.0" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="700" fill="#e3a83b">TrustSec</text>
+<line x1="1166" y1="152" x2="1166" y2="306" stroke="#5fd3a3" stroke-width="3"/>
+<line x1="1138" y1="169.0" x2="1166" y2="169.0" stroke="#5fd3a3" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="1166" cy="169.0" r="5.5" fill="#5fd3a3"/>
+<line x1="1138" y1="229.0" x2="1166" y2="229.0" stroke="#5fd3a3" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="1166" cy="229.0" r="5.5" fill="#5fd3a3"/>
+<line x1="1138" y1="289.0" x2="1166" y2="289.0" stroke="#5fd3a3" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="1166" cy="289.0" r="5.5" fill="#5fd3a3"/>
+<text x="1178" y="175.0" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="#5fd3a3">TAP</text>
+<text x="1178" y="235.0" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" fill="#5fd3a3">NDR</text>
+<text x="1178" y="288.0" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#93c4ae">passive,</text>
+<text x="1178" y="303.0" font-family="Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#93c4ae">no packets in</text>
 </svg>
