@@ -8,7 +8,7 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey">
 </p>
 
-Thirteen years of making network access control and segmentation actually hold in production: 802.1X and MAB rollouts, TrustSec policy, ISE at scale, campus fabrics, and industrial networks where availability comes first. The tools here are the ones I reach for on real engagements, rewritten so they carry no customer and anyone can run them.
+Fourteen years of making network access control and segmentation actually hold in production: 802.1X and MAB rollouts, TrustSec policy, ISE at scale, campus fabrics, and industrial networks where availability comes first. The tools here are the ones I reach for on real engagements, rewritten so they carry no customer and anyone can run them.
 
 ## Which tool, when
 
@@ -100,5 +100,9 @@ Anonymized.
 **Gated CI.** Every push runs a secret scan and fails on any private RFC 1918 address. The same gate is what keeps customer data out of this account.
 
 **Evidence over opinion.** Each tool prints the lines that prove its own result, so the output can go straight into a change record.
+
+## Writing and contact
+
+Field notes on network and OT security: [a-ayrapetov.github.io](https://a-ayrapetov.github.io). Contact: arkadiy@ayrapetov.co.
 
 New tools start from [repo-template](https://github.com/a-ayrapetov/repo-template) and land here once they pass review.
