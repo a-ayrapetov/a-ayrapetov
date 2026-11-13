@@ -32,52 +32,44 @@ Fourteen years securing enterprise and industrial networks. I scope, design, bui
 | **Identity and Zero Trust** | Cisco ISE 3.x design, upgrades and rescue, 802.1X EAP-TLS, closed-mode MAB, TrustSec, PKI. Took over a biotech company's campus network and made it stable: 915 endpoints on certificate-based EAP-TLS across eight virtual networks. |
 | **Visibility and detection** | Network TAPs on train control feeding two OT detection platforms, cut in during one overnight window with no service disruption. Traced 85 percent of daily alarming hosts in a flow analytics platform to ten rules, then worked them down by classifying the hosts behind them instead of switching rules off. |
 | **Automation** | Python AAA hardening on 6,000+ switches. Asset discovery that found thousands of OT devices missing from every inventory. The tools below are the public, generic versions of this kind of work. |
-| **Campus, WAN and data center** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Meraki and SD-WAN migrations, Nexus vPC, Secure Firewall. |
+| **Networks and telecommunications** | SD-Access and Catalyst Center, Catalyst 9800 wireless, Nexus vPC, Secure Firewall. Moved a state agency's 17 sites to SD-WAN, dual stack, with BGP to Azure. Leading a county's phone system refresh: Unified Communications Manager and Unity 11.5 to 15, 9 PRI circuits moving to SIP on two CUBE gateways. BGP over AWS Direct Connect for a genomics company's lab data. |
+| **Requirements and planning** | Requirements turned into controls and evidence. Level of effort, statements of work and bills of material checked before the order. Phased plans with a decision point and a rollback at every step, such as a data center switch replacement under a live vSAN stretch cluster, moved three server links at a time so no server ever drops. |
 
 Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Meraki, Nexus, Secure Firewall, Secure Network Analytics, Gigamon, Nozomi, Darktrace, Python with Netmiko, PowerShell.
 
 ## How the work fits together
 
+One defensive capability, from requirement to end state. Each phase ends at a decision point, and the plan moves on only when the condition on the line is met.
+
 ```mermaid
-flowchart TB
-  A([Requirement or new site]) --> S1
+%%{init: {"flowchart": {"rankSpacing": 26, "nodeSpacing": 24}}}%%
+flowchart LR
+  R([Requirement]) --> P1[Phase 1<br/>Assess] --> D1{DP 1}
+  D1 -->|open| P1
+  D1 -->|known| P2[Phase 2<br/>Develop] --> D2{DP 2}
+  D2 -->|fails| P2
+  D2 -->|holds| P3[Phase 3<br/>Deliver] --> D3{DP 3}
+  D3 -->|fail| H([Hold and<br/>roll back])
+  D3 -->|pass| P4[Phase 4<br/>Operate,<br/>defend] --> D4{DP 4}
+  D4 -->|steady| E([End state:<br/>in service])
+  D4 -->|finding| S([New<br/>requirement])
 
-  subgraph S1 [Assess: what is there and what was asked for]
-    direction LR
-    a1[requirements-trace] ~~~ a2[ot-asset-inventory] ~~~ a3[ios-hardening-audit]
-  end
-
-  subgraph S2 [Develop: design the controls]
-    direction LR
-    d1[ot-zone-conduit-check] ~~~ d2(closed-mode MAB rollout)
-  end
-
-  subgraph S3 [Deliver: change it without an outage]
-    direction LR
-    v1(production change by script) ~~~ v2[aaa-lockout-check]
-  end
-
-  subgraph S4 [Operate: keep it healthy]
-    direction LR
-    o1[ise-health-audit] ~~~ o2[ise-endpoint-explain] ~~~ o3[cisco-interface-health] ~~~ o4[cisco-config-drift]
-  end
-
-  subgraph S5 [Defend: watch and respond]
-    direction LR
-    f1(NDR alarm noise loop) ~~~ f2[ndr-coverage-map]
-  end
-
-  S1 --> S2 --> S3 --> S4 --> S5 --> E{Finding}
-  E -->|starts| N([Next assessment])
-
-  style A fill:#1f6feb,color:#fff,stroke:none
-  style E fill:#6e40c9,color:#fff,stroke:none
-  style N fill:#1f6feb,color:#fff,stroke:none
-  classDef planned stroke-dasharray:5 5
-  class a1,d1,f2 planned
+  style R fill:#1f6feb,color:#fff,stroke:none
+  style S fill:#1f6feb,color:#fff,stroke:none
+  style E fill:#1a7f37,color:#fff,stroke:none
+  style H fill:#cf222e,color:#fff,stroke:none
+  style D1 fill:#6e40c9,color:#fff,stroke:none
+  style D2 fill:#6e40c9,color:#fff,stroke:none
+  style D3 fill:#6e40c9,color:#fff,stroke:none
+  style D4 fill:#6e40c9,color:#fff,stroke:none
 ```
 
-Read it top to bottom. Assess, develop and deliver is how a defensive capability gets built. Operate and defend keep it useful after handover, and every finding starts the next assessment. Square boxes are tools, rounded boxes are playbooks, dashed boxes are being built now and turn solid when they are published.
+| Decision point | Question | If yes | If no | What informs the decision |
+|---|---|---|---|---|
+| DP 1 | Are the assets and the gaps known? | Phase 2 | Stay in Phase 1 | requirements-trace (being built), [ot-asset-inventory](https://github.com/a-ayrapetov/ot-asset-inventory), [ios-hardening-audit](https://github.com/a-ayrapetov/ios-hardening-audit) |
+| DP 2 | Does the design hold against real traffic? | Phase 3 | Redesign in Phase 2 | ot-zone-conduit-check (being built), [closed-mode MAB rollout](playbooks/closed-mode-mab-site-rollout.md) |
+| DP 3 | Do the lockout and rollback checks pass? | The change goes in | Hold the change, roll back | [aaa-lockout-check](https://github.com/a-ayrapetov/aaa-lockout-check), [production change by script](playbooks/gated-production-change.md) |
+| DP 4 | Is there a finding from health, drift or detection? | New requirement, back to Phase 1 | End state: in service | [ise-health-audit](https://github.com/a-ayrapetov/ise-health-audit), [ise-endpoint-explain](https://github.com/a-ayrapetov/ise-endpoint-explain), [cisco-interface-health](https://github.com/a-ayrapetov/cisco-interface-health), [cisco-config-drift](https://github.com/a-ayrapetov/cisco-config-drift), ndr-coverage-map (being built), [NDR alarm noise loop](playbooks/ndr-alarm-noise-reduction-loop.md) |
 
 ## Recent field work
 
