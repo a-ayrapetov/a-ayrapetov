@@ -1,7 +1,7 @@
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-v4-dark.svg">
-  <img alt="Arkadiy Ayrapetov, Cybersecurity Architect. OT/ICS, Zero Trust, Cisco ISE, TrustSec, SD-Access, Catalyst Center" src="assets/banner-v4-light.svg" width="70%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-v5-dark.svg">
+  <img alt="Arkadiy Ayrapetov, Cybersecurity Architect. OT/ICS, Zero Trust, Cisco ISE, TrustSec, SD-Access, Catalyst Center" src="assets/banner-v5-light.svg" width="100%">
 </picture>
 </p>
 
