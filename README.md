@@ -42,15 +42,13 @@ Platforms I work in: Cisco ISE, Catalyst Center, SD-Access, Catalyst 9800, Merak
 One defensive capability, from requirement to end state. Each phase ends at a decision point, and the plan moves on only when the condition on the line is met.
 
 ```mermaid
-%%{init: {"flowchart": {"rankSpacing": 26, "nodeSpacing": 24}}}%%
+%%{init: {"flowchart": {"rankSpacing": 26, "nodeSpacing": 20}}}%%
 flowchart LR
-  R([Requirement]) --> P1[Phase 1<br/>Assess] --> D1{DP 1}
-  D1 -->|open| P1
-  D1 -->|known| P2[Phase 2<br/>Develop] --> D2{DP 2}
-  D2 -->|fails| P2
-  D2 -->|holds| P3[Phase 3<br/>Deliver] --> D3{DP 3}
+  R([Requirement]) --> P1["<b>Phase 1: Assess</b><br/>ot-asset-inventory<br/>ios-hardening-audit<br/>requirements-trace (next)"] --> D1{DP 1}
+  D1 -->|gaps known| P2["<b>Phase 2: Develop</b><br/>ot-zone-conduit-check<br/>closed-mode MAB rollout"] --> D2{DP 2}
+  D2 -->|design holds| P3["<b>Phase 3: Deliver</b><br/>aaa-lockout-check<br/>change by script"] --> D3{DP 3}
   D3 -->|fail| H([Hold and<br/>roll back])
-  D3 -->|pass| P4[Phase 4<br/>Operate,<br/>defend] --> D4{DP 4}
+  D3 -->|pass| P4["<b>Phase 4: Operate, defend</b><br/>ise-health-audit<br/>ise-endpoint-explain<br/>cisco-interface-health<br/>cisco-config-drift<br/>ndr-coverage-map"] --> D4{DP 4}
   D4 -->|steady| E([End state:<br/>in service])
   D4 -->|finding| S([New<br/>requirement])
 
