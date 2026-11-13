@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="654" viewBox="0 0 1000 654" font-family="Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace" role="img" aria-label="Arkadiy Ayrapetov, Cybersecurity Architect. Network access control, segmentation and detection for industrial networks. Purdue model levels 0 to 5 with firewall and TrustSec conduits and passive TAP to NDR monitoring.">
+<defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#15342a" stroke-width="1"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071711"/><stop offset="1" stop-color="#0e271f"/></linearGradient></defs>
+<rect x="0.5" y="0.5" width="999" height="653" rx="10" fill="url(#bg)" stroke="#1e4a3b"/>
+<rect x="0.5" y="0.5" width="999" height="653" rx="10" fill="url(#g)" opacity="0.5"/>
+<path d="M14,34 V14 H34" fill="none" stroke="#5fd3a3" stroke-width="2" opacity="0.7"/>
+<path d="M986,34 V14 H966" fill="none" stroke="#5fd3a3" stroke-width="2" opacity="0.7"/>
+<path d="M14,620 V640 H34" fill="none" stroke="#5fd3a3" stroke-width="2" opacity="0.7"/>
+<path d="M986,620 V640 H966" fill="none" stroke="#5fd3a3" stroke-width="2" opacity="0.7"/>
+<text x="40" y="54" font-size="18" letter-spacing="2" fill="#5fd3a3">CRITICAL INFRASTRUCTURE · OT/ICS · ZERO TRUST</text>
+<text x="38" y="108" font-size="50" font-weight="700" fill="#ffffff">Arkadiy Ayrapetov</text>
+<rect x="40" y="124" width="6" height="28" fill="#e3a83b"/>
+<text x="56" y="148" font-size="28" font-weight="700" fill="#d6efe4">Cybersecurity Architect</text>
+<text x="40" y="186" font-size="20" fill="#a9d3c0">Network Access Control, Segmentation and Detection for Industrial Networks</text>
+<text x="40" y="222" font-size="18" fill="#5fd3a3">IEC 62443 · NIST 800-82 · TSA Security Directives · 14 Years</text>
+<rect x="40" y="250" width="780" height="64" rx="6" fill="#0f231c" stroke="#2c5848" stroke-width="1.5"/>
+<path d="M46,250 H136 V314 H46 a6,6 0 0 1 -6,-6 V256 a6,6 0 0 1 6,-6 z" fill="#2c5848"/>
+<text x="88.0" y="290.0" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">L4-5</text>
+<text x="154" y="278" font-size="24" font-weight="700" fill="#ffffff">Enterprise IT</text>
+<text x="154" y="303" font-size="19" fill="#a9d3c0">ISE, Zero Trust, SD-Access, Catalyst Center</text>
+<rect x="40" y="326" width="780" height="64" rx="6" fill="#0f231c" stroke="#2c5848" stroke-width="1.5"/>
+<path d="M46,326 H136 V390 H46 a6,6 0 0 1 -6,-6 V332 a6,6 0 0 1 6,-6 z" fill="#2c5848"/>
+<text x="88.0" y="366.0" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">L3.5</text>
+<text x="154" y="354" font-size="24" font-weight="700" fill="#ffffff">Industrial DMZ</text>
+<text x="154" y="379" font-size="19" fill="#a9d3c0">Jump hosts, patch relay, vendor remote access</text>
+<rect x="40" y="402" width="780" height="64" rx="6" fill="#123128" stroke="#3f8a6a" stroke-width="1.5"/>
+<path d="M46,402 H136 V466 H46 a6,6 0 0 1 -6,-6 V408 a6,6 0 0 1 6,-6 z" fill="#3f8a6a"/>
+<text x="88.0" y="442.0" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">L3</text>
+<text x="154" y="430" font-size="24" font-weight="700" fill="#ffffff">Site Operations</text>
+<text x="154" y="455" font-size="19" fill="#a9d3c0">Historians, engineering stations, NDR sensors</text>
+<rect x="40" y="478" width="780" height="64" rx="6" fill="#123128" stroke="#3f8a6a" stroke-width="1.5"/>
+<path d="M46,478 H136 V542 H46 a6,6 0 0 1 -6,-6 V484 a6,6 0 0 1 6,-6 z" fill="#3f8a6a"/>
+<text x="88.0" y="518.0" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">L2</text>
+<text x="154" y="506" font-size="24" font-weight="700" fill="#ffffff">Supervisory Control</text>
+<text x="154" y="531" font-size="19" fill="#a9d3c0">SCADA, HMI, fire alarm, elevators, CCTV</text>
+<rect x="40" y="554" width="780" height="64" rx="6" fill="#123128" stroke="#3f8a6a" stroke-width="1.5"/>
+<path d="M46,554 H136 V618 H46 a6,6 0 0 1 -6,-6 V560 a6,6 0 0 1 6,-6 z" fill="#3f8a6a"/>
+<text x="88.0" y="594.0" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">L0-1</text>
+<text x="154" y="582" font-size="24" font-weight="700" fill="#ffffff">Control and Field</text>
+<text x="154" y="607" font-size="19" fill="#a9d3c0">PLCs, RTUs, train control: passive only</text>
+<line x1="30" y1="320.0" x2="840" y2="320.0" stroke="#e3a83b" stroke-width="3" stroke-dasharray="9 5"/>
+<path d="M850,309.0 l11,-5 l11,5 v8 c0,8 -5,12 -11,14 c-6,-2 -11,-6 -11,-14 z" fill="#e3a83b"/>
+<text x="880" y="327.0" font-size="19" font-weight="700" fill="#e3a83b">Firewall</text>
+<line x1="30" y1="396.0" x2="840" y2="396.0" stroke="#e3a83b" stroke-width="3" stroke-dasharray="9 5"/>
+<path d="M850,385.0 l11,-5 l11,5 v8 c0,8 -5,12 -11,14 c-6,-2 -11,-6 -11,-14 z" fill="#e3a83b"/>
+<text x="880" y="403.0" font-size="19" font-weight="700" fill="#e3a83b">TrustSec</text>
+<line x1="862" y1="434.0" x2="862" y2="586.0" stroke="#5fd3a3" stroke-width="3"/>
+<line x1="820" y1="434.0" x2="862" y2="434.0" stroke="#5fd3a3" stroke-width="2" stroke-dasharray="4 4"/><circle cx="862" cy="434.0" r="7" fill="#5fd3a3"/>
+<line x1="820" y1="510.0" x2="862" y2="510.0" stroke="#5fd3a3" stroke-width="2" stroke-dasharray="4 4"/><circle cx="862" cy="510.0" r="7" fill="#5fd3a3"/>
+<line x1="820" y1="586.0" x2="862" y2="586.0" stroke="#5fd3a3" stroke-width="2" stroke-dasharray="4 4"/><circle cx="862" cy="586.0" r="7" fill="#5fd3a3"/>
+<text x="878" y="441.0" font-size="19" font-weight="700" fill="#5fd3a3">TAP</text>
+<text x="878" y="517.0" font-size="19" font-weight="700" fill="#5fd3a3">NDR</text>
+<text x="878" y="593.0" font-size="19" font-weight="700" fill="#5fd3a3">Passive</text>
+</svg>
