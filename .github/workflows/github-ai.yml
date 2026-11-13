@@ -29,6 +29,7 @@ jobs:
             // CHANGED 2026-11-13 (from the AI review on #3): a reply cut off at max_tokens now fails instead of posting half a review;
             // a network error, 429 or 5xx gets one retry; a non-JSON reply shows its first 200 characters; model name in one place.
             const MODEL = 'gpt-oss-120b';
+            if (!process.env.CF_AI_TOKEN || !process.env.CF_ACCOUNT_ID) throw new Error('CF_AI_TOKEN or CF_ACCOUNT_ID is not set (GitHub does not pass secrets to pull requests from forks)');
             const cutOff = (o) => o?.choices?.[0]?.finish_reason === 'length' || o?.status === 'incomplete';
             const call = async (payload) => {
               for (let attempt = 1; ; attempt++) {
